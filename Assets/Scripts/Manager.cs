@@ -2,10 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
     public static Manager Instance;
+    public Canvas canvas;
+    public TextMeshProUGUI textMesh;
+    public Image backgroundImage;
+    public  Sprite bedroom;
+    public  Sprite bridge;
 
     private void Awake()
     {

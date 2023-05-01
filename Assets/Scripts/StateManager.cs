@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using States;
 using UnityEngine;
 /**
  * This class manages the States and calls in each frame the UpdateState function of the currentState
@@ -15,13 +16,14 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public static StateManager Instance;
-
     BaseState currentState;
 
     #region State Initialization
     // (1) Initialize your scripts / states here like this  make them public to use them at other locations
     public BaseState initState = new TESTInitState();
     public BaseState secondState = new TESTsecondState();
+    public BaseState zuhause = new Zuhause_Bedroom();
+    public BaseState bridge = new UniBridge();
     
     /// end of (1)
     #endregion
@@ -39,7 +41,7 @@ public class StateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = initState;
+        currentState = zuhause;
         currentState.EnterState(this);
     }
 
