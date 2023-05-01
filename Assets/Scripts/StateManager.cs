@@ -5,8 +5,9 @@ using UnityEngine;
 /**
  * This class manages the States and calls in each frame the UpdateState function of the currentState
  *
- * You dont have to code anything here. Use your own script like the "TESTInitState.cs" or the "TESTsecondState.cs"
- * to use a your script, you have to initialize it at (1) and make it reachable from the initstate
+ * You dont have to code anything here except the initialization of your own StateScript.
+ * Use your own script like the "TESTInitState.cs" or the "TESTsecondState.cs" inside the "State Scripts" folder.
+ * To use your script, you have to initialize it at (1) and make it reachable from the initstate
  *
  * To test or debug your script you can temporarily change the currentState in the Start() function to your function name
  * which then makes your script the first one which runs
