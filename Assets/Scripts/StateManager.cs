@@ -28,11 +28,16 @@ public class StateManager : MonoBehaviour
     public BaseState zuhause = new Zuhause_Bedroom();
     public BaseState bridge = new UniBridge();
     public BaseState mainMenu = new MainMenu();
+    public BaseState wardrobe = new Wardrobe();
     
     
     /// end of (1)
     #endregion
    
+    // Set here global variables such as isWearingClothes etc
+    public bool isWearingClothes = false;
+    public bool isWearingBalenciaga = false;
+    /// 
 
     private void Awake()
     {
@@ -65,12 +70,23 @@ public class StateManager : MonoBehaviour
         }
 
         optionList = new List<GameObject>();
+        
         currentState = state;
         state.EnterState(Instance);
     }
 
     public void ShowDialogOptions(BaseState state, List<string> options)
     {
+        //delete all gameobjects before creating new ones
+        //Delete options and switch state
+        foreach (GameObject option in optionList)
+        {
+            Destroy(option);
+        }
+
+        optionList = new List<GameObject>();
+        
+        //create new buttons and add them
         GameObject layout = Manager.Instance.layoutObj;
         GameObject buttonPrefab = Manager.Instance.buttonPrefab;
         int index = 0;

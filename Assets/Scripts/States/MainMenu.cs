@@ -34,10 +34,26 @@ public class MainMenu : BaseState
 
     public override void OptionClicked(int index, string option)
     {
-        if (index >= 0 && option != null)
-        {  
-            if(index == 0)
+        switch (index)
+        {
+            case 0:
                 stateManager.SwitchState(stateManager.zuhause);
+                break;
+            case 1:
+                manager.textMesh.text = "Not yet implemented";
+                break;            
+            case 2:
+                manager.textMesh.text = "Not yet implemented";
+                break;            
+            case 3:
+                manager.textMesh.text = "Not yet implemented";
+                break;            
+            case 4:
+                manager.textMesh.text = "Not yet implemented";
+                break;
+            default:
+                manager.textMesh.text = "INDEX OUT OF BOUNDS  THIS SHOULD NOT OCCUR";
+                break;
         }
     }
 }

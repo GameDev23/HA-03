@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
     public Sprite bridge;
     public GameObject layoutObj;
     public GameObject buttonPrefab;
+    public List<Sprite> backgroundSprites = new List<Sprite>();
 
     public int test = 0;
 
