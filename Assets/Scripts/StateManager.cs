@@ -47,13 +47,13 @@ public class StateManager : MonoBehaviour
     void Start()
     {
         currentState = mainMenu;
-        currentState.EnterState(this);
+        currentState.EnterState(Instance);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentState.UpdateState(this);
+        currentState.UpdateState(Instance);
     }
     
     public void SwitchState(BaseState state)
@@ -66,7 +66,7 @@ public class StateManager : MonoBehaviour
 
         optionList = new List<GameObject>();
         currentState = state;
-        state.EnterState(this);
+        state.EnterState(Instance);
     }
 
     public void ShowDialogOptions(BaseState state, List<string> options)
