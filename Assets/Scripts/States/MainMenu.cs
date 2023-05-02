@@ -14,12 +14,16 @@ public class MainMenu : BaseState
         manager = Manager.Instance;
         Manager.Instance.test += 1;
         Debug.Log(manager.test + "  " + Manager.Instance.test);
+        
+        //create new list which will contain the options listed above
         List<string> options = new List<string>();
+        //add some options
         options.Add("Start");
         options.Add("Item 2");
         options.Add("Item 3");
         options.Add("Item 4");
         options.Add("Item 4");
+        //show these options on the panel
         state.ShowDialogOptions(this, options);
     }
 
