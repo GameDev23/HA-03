@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     public Image backgroundImage;
     public Sprite bedroom;
     public Sprite bridge;
+    public GameObject key;
     public GameObject layoutObj;
     public GameObject buttonPrefab;
     public List<Sprite> backgroundSprites = new List<Sprite>();
@@ -39,5 +40,25 @@ public class Manager : MonoBehaviour
     {
         
     }
-    
+
+    public void collectKey()
+    {
+        StartCoroutine(Key());
+    }
+
+    IEnumerator Key()
+    {
+        Image img = key.GetComponent<Image>();
+        AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.collectItem, 1f);
+        // loop over 1 second backwards
+        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            img.color = new Color(1, 1, 1, i);
+            yield return null;
+        }
+
+        key.SetActive(false);
+
+    }
 }

@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip fashion;
     public AudioClip standardBackgroundMusicClip;
     public AudioClip zipper;
+    public AudioClip eatApple;
+    public AudioClip collectItem;
+    public AudioClip lockedDoor;
+    public AudioClip unlockDoor;
 
     private void Awake()
     {

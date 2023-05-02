@@ -17,6 +17,7 @@ public class Zuhause_Bedroom : BaseState
     //options
     private string optionWardrobe;
     private string optionComputer;
+    private string optionKitchen;
     public override void EnterState(StateManager state)
     {
         stateManager = state;
@@ -44,13 +45,17 @@ public class Zuhause_Bedroom : BaseState
         {
             textMesh.text = "What now?";
             if (stateManager.isWearingBalenciaga)
-                textMesh.text = "Damn, I feel confident now.";
+                textMesh.text = "Damn, look at you and your BALENCIAGA®'s ";
+            else if (!stateManager.isWearingBalenciaga && stateManager.isWearingClothes)
+                textMesh.text = "Hmmm";
             textMesh.text += "\n";
 
         }
         optionWardrobe = "Head to the wardrobe.";
-        optionComputer = "Go to computer";
+        optionComputer = "Go to the computer";
+        optionKitchen = "Head to the kitchen";
         options.Add(optionWardrobe);
+        options.Add(optionKitchen);
         options.Add(optionComputer);
         state.ShowDialogOptions(this, options);
     }
@@ -73,11 +78,30 @@ public class Zuhause_Bedroom : BaseState
     {
         if (option.Equals(optionWardrobe))
         {
-            stateManager.SwitchState(stateManager.wardrobe);
+            //check if wardrobe is Locked
+            if(!stateManager.wardrobeIsLocked)
+                stateManager.SwitchState(stateManager.wardrobe);
+            //check if is locked, but can be unlocked
+            else if (stateManager.wardrobeIsLocked && stateManager.hasKey)
+            {
+                stateManager.wardrobeIsLocked = false;
+                AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.unlockDoor, 1f);
+                stateManager.SwitchState(stateManager.wardrobe);
+            }
+            else
+            {
+                textMesh.text = "Hmm  seems locked. The key should be somewhere...";
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.lockedDoor, 1f);
+
+            }
         }
         else if (option.Equals(optionComputer))
         {
             stateManager.SwitchState(stateManager.computer);
+        }
+        else if (option.Equals(optionKitchen))
+        {
+            stateManager.SwitchState(stateManager.kitchen);
         }
     }
 

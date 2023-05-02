@@ -30,6 +30,7 @@ public class StateManager : MonoBehaviour
     public BaseState mainMenu = new MainMenu();
     public BaseState wardrobe = new Wardrobe();
     public BaseState computer = new Computer();
+    public BaseState kitchen = new Kitchen();
     
     
     /// end of (1)
@@ -38,6 +39,9 @@ public class StateManager : MonoBehaviour
     // Set here global variables such as isWearingClothes etc
     public bool isWearingClothes = false;
     public bool isWearingBalenciaga = false;
+    public bool hasEaten = false;
+    public bool hasKey = false;
+    public bool wardrobeIsLocked = true;
     /// 
 
     private void Awake()
