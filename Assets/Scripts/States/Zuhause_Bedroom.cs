@@ -33,4 +33,9 @@ public class Zuhause_Bedroom : BaseState
         if(Input.GetKeyDown(KeyCode.W))
             state.SwitchState(state.bridge);
     }
+    
+    public override void OptionClicked(int index, string option)
+    {
+        
+    }
 }

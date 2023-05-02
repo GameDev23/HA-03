@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using States;
+using TMPro;
 using UnityEngine;
 /**
  * This class manages the States and calls in each frame the UpdateState function of the currentState
@@ -18,12 +19,16 @@ public class StateManager : MonoBehaviour
     public static StateManager Instance;
     BaseState currentState;
 
+    private List<GameObject> optionList = new List<GameObject>();
+
     #region State Initialization
     // (1) Initialize your scripts / states here like this  make them public to use them at other locations
     public BaseState initState = new TESTInitState();
     public BaseState secondState = new TESTsecondState();
     public BaseState zuhause = new Zuhause_Bedroom();
     public BaseState bridge = new UniBridge();
+    public BaseState mainMenu = new MainMenu();
+    
     
     /// end of (1)
     #endregion
@@ -41,7 +46,7 @@ public class StateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = zuhause;
+        currentState = mainMenu;
         currentState.EnterState(this);
     }
 
@@ -53,7 +58,36 @@ public class StateManager : MonoBehaviour
     
     public void SwitchState(BaseState state)
     {
+        //Delete options and switch state
+        foreach (GameObject option in optionList)
+        {
+            Destroy(option);
+        }
+
+        optionList = new List<GameObject>();
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void ShowDialogOptions(BaseState state, List<string> options)
+    {
+        GameObject layout = Manager.Instance.layoutObj;
+        GameObject buttonPrefab = Manager.Instance.buttonPrefab;
+        int index = 0;
+        foreach (string option in options)
+        {
+            //instatiate new button option and put it into vertical layout grid
+            GameObject newButton = Instantiate(buttonPrefab, layout.transform);
+            optionList.Add(newButton);
+            buttonScript script = newButton.GetComponent<buttonScript>();
+            newButton.GetComponent<TextMeshProUGUI>().text = option;
+            newButton.transform.SetSiblingIndex(index);
+            
+            //set button variables to know which button got pressed in which state
+            script.index = index;
+            script.option = option;
+            script.currentState = state;
+            index++;
+        }
     }
 }

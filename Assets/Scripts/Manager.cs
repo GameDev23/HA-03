@@ -11,8 +11,12 @@ public class Manager : MonoBehaviour
     public Canvas canvas;
     public TextMeshProUGUI textMesh;
     public Image backgroundImage;
-    public  Sprite bedroom;
-    public  Sprite bridge;
+    public Sprite bedroom;
+    public Sprite bridge;
+    public GameObject layoutObj;
+    public GameObject buttonPrefab;
+
+    public int test = 0;
 
     private void Awake()
     {

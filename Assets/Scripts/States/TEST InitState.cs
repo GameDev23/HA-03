@@ -46,4 +46,9 @@ public class TESTInitState : BaseState
         
 
     }
+    
+    public override void OptionClicked(int index, string option)
+    {
+        
+    }
 }
