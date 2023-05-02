@@ -51,4 +51,9 @@ public class TESTInitState : BaseState
     {
         
     }
+
+    public override void leaveState(StateManager state)
+    {
+        
+    }
 }

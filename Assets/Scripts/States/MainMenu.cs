@@ -56,4 +56,9 @@ public class MainMenu : BaseState
                 break;
         }
     }
+
+    public override void leaveState(StateManager state)
+    {
+        
+    }
 }

@@ -29,6 +29,7 @@ public class StateManager : MonoBehaviour
     public BaseState bridge = new UniBridge();
     public BaseState mainMenu = new MainMenu();
     public BaseState wardrobe = new Wardrobe();
+    public BaseState computer = new Computer();
     
     
     /// end of (1)
@@ -53,6 +54,9 @@ public class StateManager : MonoBehaviour
     {
         currentState = mainMenu;
         currentState.EnterState(Instance);
+        AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.standardBackgroundMusicClip;
+        AudioManager.Instance.sourceGlobal.Play();
+        AudioManager.Instance.sourceGlobal.volume = 0.2f;
     }
 
     // Update is called once per frame
@@ -71,6 +75,10 @@ public class StateManager : MonoBehaviour
 
         optionList = new List<GameObject>();
         
+        //Clear dialog window
+        Manager.Instance.textMesh.text = "";
+        
+        currentState.leaveState(Instance);
         currentState = state;
         state.EnterState(Instance);
     }

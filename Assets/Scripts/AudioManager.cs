@@ -7,7 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     public AudioSource source;
+    public AudioSource sourceGlobal;
     public AudioClip fashion;
+    public AudioClip standardBackgroundMusicClip;
+    public AudioClip zipper;
 
     private void Awake()
     {

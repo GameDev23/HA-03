@@ -24,5 +24,12 @@ public abstract class BaseState
      */
     public abstract void OptionClicked(int index, string option);
 
+    /**
+     * This method is called once at the end of your state while it transitions to the next one.
+     * Use this method to get rid of all global things like background music etc.
+     */
+    public abstract void leaveState(StateManager state);
+
+
 
 }

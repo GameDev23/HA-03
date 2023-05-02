@@ -32,4 +32,9 @@ public class TESTsecondState : BaseState
     {
         
     }
+
+    public override void leaveState(StateManager state)
+    {
+        
+    }
 }

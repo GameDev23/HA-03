@@ -17,5 +17,10 @@
         {
         
         }
+
+        public override void leaveState(StateManager state)
+        {
+            
+        }
     }
 }

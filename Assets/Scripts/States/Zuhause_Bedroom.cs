@@ -8,37 +8,51 @@ public class Zuhause_Bedroom : BaseState
 {
     public List<string> inventory = new List<string>();
     private StateManager stateManager;
-    List<string> options = new List<string>();
+    private List<string> options;
     private AudioSource audioSource;
     private AudioClip audioClip;
     private TextMeshProUGUI textMesh;
     private bool isStart = true;
+    
+    //options
+    private string optionWardrobe;
+    private string optionComputer;
     public override void EnterState(StateManager state)
     {
         stateManager = state;
+        textMesh = Manager.Instance.textMesh;
+        options = new List<string>();
+        Manager.Instance.backgroundImage.sprite = Manager.Instance.bedroom;
         if(isStart)
         {
             
-            Manager.Instance.backgroundImage.sprite = Manager.Instance.bedroom;
-            Manager.Instance.textMesh.text = "Time to get up and put on my BALENCIAGA® and pack my stuff to write todays exam.\n\n" +
-                                             "There's a reason why they say that fashion is a form of self-expression – and today, I'm expressing my determination, ambition, and intelligence through my choice to wear BALENCIAGA® to this life-changing exam. ";
+
+
+            textMesh.text = "Time to get up and put on your BALENCIAGA® and pack your stuff to write todays exam.\n\n" +
+                            "There's a reason why they say that fashion is a form of self-expression – and today, You're expressing your determination, ambition, and intelligence through your choice to wear BALENCIAGA® to this life-changing exam. ";
+            
+
+            
             /*AudioManager.Instance.source.clip = AudioManager.Instance.fashion;
             AudioManager.Instance.source.Play();
             AudioManager.Instance.source.volume = 0.1f;*/
             textMesh = Manager.Instance.textMesh;
             isStart = false;
             
-            
-            options.Add("Head to the wardrobe.");
-            state.ShowDialogOptions(this, options);
         }
         else
         {
-            Manager.Instance.backgroundImage.sprite = Manager.Instance.bedroom;
-            textMesh.text = "";
+            textMesh.text = "What now?";
             if (stateManager.isWearingBalenciaga)
-                textMesh.text = "Damn, I fell confident now.";
+                textMesh.text = "Damn, I feel confident now.";
+            textMesh.text += "\n";
+
         }
+        optionWardrobe = "Head to the wardrobe.";
+        optionComputer = "Go to computer";
+        options.Add(optionWardrobe);
+        options.Add(optionComputer);
+        state.ShowDialogOptions(this, options);
     }
 
     public override void UpdateState(StateManager state)
@@ -57,12 +71,18 @@ public class Zuhause_Bedroom : BaseState
     
     public override void OptionClicked(int index, string option)
     {
-        switch (option)
+        if (option.Equals(optionWardrobe))
         {
-            case "Head to the wardrobe.":
-                stateManager.SwitchState(stateManager.wardrobe);
-                break;
-                
+            stateManager.SwitchState(stateManager.wardrobe);
         }
+        else if (option.Equals(optionComputer))
+        {
+            stateManager.SwitchState(stateManager.computer);
+        }
+    }
+
+    public override void leaveState(StateManager state)
+    {
+        
     }
 }
