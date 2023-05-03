@@ -16,6 +16,8 @@ public class Kitchen : BaseState
     private string optionEat = "Eat some fruits";
     private string optionBackToBedroom = "Head back to the bedroom";
     private string optionTakeKey = "Take the key";
+    private string optionLivingroom = "Enter the livingroom";
+    private string optionPfandgeraet = "Search for the <color=yellow>Pfandflaschengerät</color>";
 
     
     public override void EnterState(StateManager state)
@@ -54,6 +56,9 @@ public class Kitchen : BaseState
             options.Add(optionEat);
         if(stateManager.hasEaten && !stateManager.hasKey)
             options.Add(optionTakeKey);
+        if(stateManager.knowsAboutPfandflaschengeraet && !stateManager.hasCollectedPfandflaschengeraet)
+            options.Add(optionPfandgeraet);
+        options.Add(optionLivingroom);
         options.Add(optionBackToBedroom);
         
         stateManager.ShowDialogOptions(this, options);
@@ -90,6 +95,20 @@ public class Kitchen : BaseState
             Manager.Instance.collectKey();
             options.Remove(option);
             stateManager.hasKey = true;
+            stateManager.ShowDialogOptions(this, options);
+        }
+
+        if (option.Equals(optionLivingroom))
+        {
+            stateManager.SwitchState(stateManager.livingroom);
+        }
+
+        if (option.Equals(optionPfandgeraet))
+        {
+            textMesh.text =
+                "Nice. You found that beautiful piece of german craftsmanship.\nIt also has USB-C!\nQuick plug it into your computer!";
+            stateManager.hasCollectedPfandflaschengeraet = true;
+            options[index] = "";
             stateManager.ShowDialogOptions(this, options);
         }
     }

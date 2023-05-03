@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip lockedDoor;
     public AudioClip unlockDoor;
     public AudioClip camera;
+    public AudioClip barcodeScanner;
+    public AudioClip usbConnected;
+    public AudioClip cashRegister;
 
     private void Awake()
     {

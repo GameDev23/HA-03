@@ -13,7 +13,8 @@ public class Wardrobe : BaseState
     private TextMeshProUGUI textMesh;
     private List<string> options;
 
-    private Sprite backgroundSPrite; 
+    private Sprite backgroundSPrite;
+    private string optionBalenciaga;
     
     
     public override void EnterState(StateManager state)
@@ -33,8 +34,9 @@ public class Wardrobe : BaseState
         //create new list which will contain the options listed above
         options = new List<string>();
         //add some options
+        optionBalenciaga = "Put on the BALENCIAGA®'s\n<color=red> (seizure warning) </color>";
         if(!stateManager.isWearingBalenciaga)
-            options.Add("Put on the BALENCIAGA®'s");
+            options.Add(optionBalenciaga);
         if(!stateManager.isWearingClothes || stateManager.isWearingBalenciaga)
             options.Add("Decide to put on only some normal clothes");
         options.Add("go back to bedroom...");
@@ -48,7 +50,7 @@ public class Wardrobe : BaseState
     {
         if (stateManager.isWearingBalenciaga && !Flash.Instance.flashing && !Flash.Instance.isInvoked)
         {
-            float delay = Random.Range(0.02f, 2f);
+            float delay = Random.Range(0.02f, 1f);
             Debug.Log("Flash start with delay of " + delay);
             Flash.Instance.doFlashWithDelay(delay);
             
@@ -64,7 +66,7 @@ public class Wardrobe : BaseState
                 stateManager.SwitchState(stateManager.zuhause);
                 break;
             
-            case "Put on the BALENCIAGA®'s":
+            case "Put on the BALENCIAGA®'s\n<color=red> (seizure warning) </color>":
                 AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.zipper, 0.5f);
                 textMesh.text = "Wow  you're feeling much more confident now. You will ace this exam";
                 options[index] = "";
@@ -78,8 +80,8 @@ public class Wardrobe : BaseState
                 AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.zipper, 0.5f);
                 textMesh.text = "Hmm..  okay i guess.";
                 options[index] = "";
-                if (!options.Contains("Put on the BALENCIAGA®'s"))
-                    options[index] ="Put on the BALENCIAGA®'s";
+                if (!options.Contains(optionBalenciaga))
+                    options[index] =optionBalenciaga;
                 stateManager.isWearingClothes = true;
                 stateManager.isWearingBalenciaga = false;
                 stateManager.ShowDialogOptions(this, options);

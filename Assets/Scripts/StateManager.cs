@@ -31,6 +31,7 @@ public class StateManager : MonoBehaviour
     public BaseState wardrobe = new Wardrobe();
     public BaseState computer = new Computer();
     public BaseState kitchen = new Kitchen();
+    public BaseState livingroom = new Livingroom();
     
     
     /// end of (1)
@@ -44,6 +45,12 @@ public class StateManager : MonoBehaviour
     public bool hasEaten = false;
     public bool hasKey = false;
     public bool wardrobeIsLocked = true;
+    public int pencilCount = 0;
+    public bool knowsAboutPfandflaschengeraet;
+    public bool hasCollectedPfandflaschengeraet;
+    public bool hasInstalledPfandflaschengeraet;
+    public int pfandFlaschenCount = 0;
+    public float cash = 0f;
     /// 
 
     #endregion

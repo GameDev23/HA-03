@@ -497,6 +497,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23668a2bd6cb9234a8803d8ac103c8c3, type: 3}
   - {fileID: 21300000, guid: 07ba97f21839792448007a42f61d3a5d, type: 3}
   - {fileID: 21300000, guid: 4c66332ddf7a7dc4189b50ff32ac8e2c, type: 3}
+  - {fileID: 21300000, guid: a8286d3af4dae4f4982dc1b0d6b280f2, type: 3}
   test: 0
 --- !u!4 &558888427
 Transform:
@@ -756,6 +757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashTimelength: 0.2
   doCameraFlash: 0
+  flashing: 0
+  isInvoked: 0
 --- !u!1 &1236839820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1087,9 @@ MonoBehaviour:
   lockedDoor: {fileID: 8300000, guid: 668598cce9bd1b14c8bb54b6d95c8162, type: 3}
   unlockDoor: {fileID: 8300000, guid: 83225e7a5a2bee64a9a2db78be0de4bb, type: 3}
   camera: {fileID: 8300000, guid: c605b8fabf0d46444aa5fcabd5b9e039, type: 3}
+  barcodeScanner: {fileID: 8300000, guid: 436cc116ddde2d749ae68c041efb0367, type: 3}
+  usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
+  cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
 --- !u!4 &1575410352
 Transform:
   m_ObjectHideFlags: 0
@@ -1433,6 +1439,12 @@ MonoBehaviour:
   hasEaten: 0
   hasKey: 0
   wardrobeIsLocked: 1
+  pencilCount: 0
+  knowsAboutPfandflaschengeraet: 0
+  hasCollectedPfandflaschengeraet: 0
+  hasInstalledPfandflaschengeraet: 0
+  pfandFlaschenCount: 0
+  cash: 0
 --- !u!4 &1692136488
 Transform:
   m_ObjectHideFlags: 0
