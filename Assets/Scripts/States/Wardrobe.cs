@@ -12,6 +12,10 @@ public class Wardrobe : BaseState
     private AudioClip audioClip;
     private TextMeshProUGUI textMesh;
     private List<string> options;
+
+    private Sprite backgroundSPrite; 
+    
+    
     public override void EnterState(StateManager state)
     {
         options = new List<string>();
@@ -23,7 +27,7 @@ public class Wardrobe : BaseState
         Manager.Instance.textMesh.text = "";
         AudioManager.Instance.source.clip = AudioManager.Instance.fashion;
         AudioManager.Instance.source.Play();
-        AudioManager.Instance.source.volume = 0.1f;
+        AudioManager.Instance.source.volume = 0.4f;
         textMesh = Manager.Instance.textMesh;
         
         //create new list which will contain the options listed above
@@ -42,6 +46,13 @@ public class Wardrobe : BaseState
 
     public override void UpdateState(StateManager state)
     {
+        if (stateManager.isWearingBalenciaga && !Flash.Instance.flashing && !Flash.Instance.isInvoked)
+        {
+            float delay = Random.Range(0.02f, 2f);
+            Debug.Log("Flash start with delay of " + delay);
+            Flash.Instance.doFlashWithDelay(delay);
+            
+        }
 
     }
 
@@ -82,7 +93,9 @@ public class Wardrobe : BaseState
 
     public override void leaveState(StateManager state)
     {
+        Manager.Instance.backgroundImage.color = Color.white;
         AudioManager.Instance.source.Stop();
-        AudioManager.Instance.sourceGlobal.volume = 0.2f;
+        AudioManager.Instance.sourceGlobal.volume = 0.4f;
+        
     }
 }

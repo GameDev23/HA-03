@@ -35,7 +35,9 @@ public class StateManager : MonoBehaviour
     
     /// end of (1)
     #endregion
-   
+
+    #region Global variables
+
     // Set here global variables such as isWearingClothes etc
     public bool isWearingClothes = false;
     public bool isWearingBalenciaga = false;
@@ -43,6 +45,8 @@ public class StateManager : MonoBehaviour
     public bool hasKey = false;
     public bool wardrobeIsLocked = true;
     /// 
+
+    #endregion
 
     private void Awake()
     {

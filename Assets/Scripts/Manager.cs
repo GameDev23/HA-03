@@ -16,6 +16,7 @@ public class Manager : MonoBehaviour
     public GameObject key;
     public GameObject layoutObj;
     public GameObject buttonPrefab;
+    public GameObject cameraFlash;
     public List<Sprite> backgroundSprites = new List<Sprite>();
 
     public int test = 0;
@@ -61,4 +62,6 @@ public class Manager : MonoBehaviour
         key.SetActive(false);
 
     }
+    
+    
 }

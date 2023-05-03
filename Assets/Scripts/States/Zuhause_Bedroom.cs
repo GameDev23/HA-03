@@ -62,14 +62,6 @@ public class Zuhause_Bedroom : BaseState
 
     public override void UpdateState(StateManager state)
     {
-        if (Input.GetKeyDown(KeyCode.P) && !inventory.Contains("pants"))
-        {
-            inventory.Add("pants");
-            string text = "You have found some pants and decided to wear them.";
-            textMesh.text = text;
-
-
-        }
         if(Input.GetKeyDown(KeyCode.W))
             state.SwitchState(state.bridge);
     }

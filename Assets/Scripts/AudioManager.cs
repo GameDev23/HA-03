@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip collectItem;
     public AudioClip lockedDoor;
     public AudioClip unlockDoor;
+    public AudioClip camera;
 
     private void Awake()
     {
