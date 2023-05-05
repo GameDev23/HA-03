@@ -32,6 +32,7 @@ public class StateManager : MonoBehaviour
     public BaseState computer = new Computer();
     public BaseState kitchen = new Kitchen();
     public BaseState livingroom = new Livingroom();
+    public BaseState backrooms_entrance = new Backrooms_Entrance();
     
     
     /// end of (1)

@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public AudioSource source;
     public AudioSource sourceGlobal;
+    public AudioSource sourceBackrooms;
     public AudioClip fashion;
     public AudioClip standardBackgroundMusicClip;
     public AudioClip zipper;
@@ -19,6 +20,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip barcodeScanner;
     public AudioClip usbConnected;
     public AudioClip cashRegister;
+    public AudioClip backRoomEntrance;
+
+    public float _Volume = 1f;
 
     private void Awake()
     {
