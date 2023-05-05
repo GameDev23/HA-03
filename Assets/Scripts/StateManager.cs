@@ -33,6 +33,8 @@ public class StateManager : MonoBehaviour
     public BaseState kitchen = new Kitchen();
     public BaseState livingroom = new Livingroom();
     public BaseState backrooms_entrance = new Backrooms_Entrance();
+    public BaseState lecturehallEntrance = new LecturehallEntrance();
+    public BaseState lecturehallSeat = new LecturehallSeat();
     
     
     /// end of (1)
@@ -67,12 +69,13 @@ public class StateManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.standardBackgroundMusicClip;
+        AudioManager.Instance.sourceGlobal.Play();
+        AudioManager.Instance.sourceGlobal.volume = AudioManager.Instance._Volume / 3;
+        
         currentState = mainMenu;
         currentState.EnterState(Instance);
-        AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.standardBackgroundMusicClip;
-        AudioManager.Instance.sourceGlobal.Play();
-        AudioManager.Instance.sourceGlobal.volume = 0.2f;
+
     }
 
     // Update is called once per frame

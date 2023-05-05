@@ -55,7 +55,7 @@ using UnityEngine;
      
      public void setDoFlash()
      {
-         AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.camera, 1f);
+         AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.cameraFlash, 1f);
          doCameraFlash = true; ;
      }
      public void CameraFlash(float delay = 0f)

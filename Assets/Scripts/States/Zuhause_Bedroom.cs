@@ -63,7 +63,7 @@ public class Zuhause_Bedroom : BaseState
     public override void UpdateState(StateManager state)
     {
         if(Input.GetKeyDown(KeyCode.W))
-            state.SwitchState(state.bridge);
+            state.SwitchState(state.lecturehallEntrance);
     }
     
     public override void OptionClicked(int index, string option)

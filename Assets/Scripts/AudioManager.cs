@@ -16,11 +16,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip collectItem;
     public AudioClip lockedDoor;
     public AudioClip unlockDoor;
-    public AudioClip camera;
+    public AudioClip cameraFlash;
     public AudioClip barcodeScanner;
     public AudioClip usbConnected;
     public AudioClip cashRegister;
     public AudioClip backRoomEntrance;
+    public AudioClip crowded;
+    public AudioClip gibberish1;
+    public AudioClip gibberish2;
+    public AudioClip gibberish3;
+    public AudioClip examTheme;
 
     public float _Volume = 1f;
 

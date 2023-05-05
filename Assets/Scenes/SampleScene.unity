@@ -499,6 +499,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4c66332ddf7a7dc4189b50ff32ac8e2c, type: 3}
   - {fileID: 21300000, guid: a8286d3af4dae4f4982dc1b0d6b280f2, type: 3}
   - {fileID: 21300000, guid: 0c958654a2c8dbb45b78369740588947, type: 3}
+  backgroundSpritesDavid:
+  - {fileID: 21300000, guid: 7d0ca2f727cb28c43bc8faeffde0f8c3, type: 3}
+  - {fileID: 21300000, guid: 6fcf147a602de2d4ba3855fdb7719c75, type: 3}
   test: 0
 --- !u!4 &558888427
 Transform:
@@ -921,8 +924,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1089,11 +1092,16 @@ MonoBehaviour:
   collectItem: {fileID: 8300000, guid: 067f6a5adf263a942a8f2a6aacc3ae5e, type: 3}
   lockedDoor: {fileID: 8300000, guid: 668598cce9bd1b14c8bb54b6d95c8162, type: 3}
   unlockDoor: {fileID: 8300000, guid: 83225e7a5a2bee64a9a2db78be0de4bb, type: 3}
-  camera: {fileID: 8300000, guid: c605b8fabf0d46444aa5fcabd5b9e039, type: 3}
+  cameraFlash: {fileID: 0}
   barcodeScanner: {fileID: 8300000, guid: 436cc116ddde2d749ae68c041efb0367, type: 3}
   usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
   cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
   backRoomEntrance: {fileID: 8300000, guid: 7d118fb9a4c6b10449069eb50f75400c, type: 3}
+  crowded: {fileID: 8300000, guid: b43a7407d48361049964a6d18df59498, type: 3}
+  gibberish1: {fileID: 8300000, guid: 3d7f048975eed3a45aa1f4159268ea28, type: 3}
+  gibberish2: {fileID: 8300000, guid: 7ebda990dcf08034b9120b1d59518d5f, type: 3}
+  gibberish3: {fileID: 8300000, guid: a1ef44ae3630d654d927ee19c759a8e8, type: 3}
+  examTheme: {fileID: 8300000, guid: 9c2803d89a8ca5b41b326d4d66af5747, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:
