@@ -35,6 +35,7 @@ public class StateManager : MonoBehaviour
     public BaseState backrooms_entrance = new Backrooms_Entrance();
     public BaseState lecturehallEntrance = new LecturehallEntrance();
     public BaseState lecturehallSeat = new LecturehallSeat();
+    public BaseState endingDead = new EndingDead();
     
     
     /// end of (1)
@@ -74,7 +75,11 @@ public class StateManager : MonoBehaviour
         AudioManager.Instance.sourceGlobal.volume = AudioManager.Instance._Volume / 3;
         
         currentState = mainMenu;
+        List<string> temp = new List<string>();
+        temp.Add("");
+        ShowDialogOptions(currentState, temp );
         currentState.EnterState(Instance);
+        
 
     }
 

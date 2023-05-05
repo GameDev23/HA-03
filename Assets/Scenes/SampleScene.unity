@@ -502,6 +502,7 @@ MonoBehaviour:
   backgroundSpritesDavid:
   - {fileID: 21300000, guid: 7d0ca2f727cb28c43bc8faeffde0f8c3, type: 3}
   - {fileID: 21300000, guid: 6fcf147a602de2d4ba3855fdb7719c75, type: 3}
+  - {fileID: 21300000, guid: 234b68405f10e7d4fb40cc85b99f2187, type: 3}
   test: 0
 --- !u!4 &558888427
 Transform:
@@ -1092,7 +1093,7 @@ MonoBehaviour:
   collectItem: {fileID: 8300000, guid: 067f6a5adf263a942a8f2a6aacc3ae5e, type: 3}
   lockedDoor: {fileID: 8300000, guid: 668598cce9bd1b14c8bb54b6d95c8162, type: 3}
   unlockDoor: {fileID: 8300000, guid: 83225e7a5a2bee64a9a2db78be0de4bb, type: 3}
-  cameraFlash: {fileID: 0}
+  cameraFlash: {fileID: 8300000, guid: c605b8fabf0d46444aa5fcabd5b9e039, type: 3}
   barcodeScanner: {fileID: 8300000, guid: 436cc116ddde2d749ae68c041efb0367, type: 3}
   usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
   cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
@@ -1102,6 +1103,7 @@ MonoBehaviour:
   gibberish2: {fileID: 8300000, guid: 7ebda990dcf08034b9120b1d59518d5f, type: 3}
   gibberish3: {fileID: 8300000, guid: a1ef44ae3630d654d927ee19c759a8e8, type: 3}
   examTheme: {fileID: 8300000, guid: 9c2803d89a8ca5b41b326d4d66af5747, type: 3}
+  endingDead: {fileID: 8300000, guid: d9fd5e05535e7144c965af2c544c74d1, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:

@@ -50,7 +50,7 @@ public class LecturehallEntrance : BaseState
             }
             else if (dialogStep == 1)
             {
-                textMesh.text = "\"Excuse me, are you wearing the newest Balenciaga collection?\nIt looks amazing!\" he said in a very jealous way";
+                textMesh.text = "\"Excuse me, are you wearing the newest BALENCIAGA® collection?\nIt looks amazing!\" he said in a very jealous way";
                 AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.gibberish1, 2f);
                 options.Add(optionTalk2);
             }

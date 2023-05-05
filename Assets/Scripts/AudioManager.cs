@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gibberish2;
     public AudioClip gibberish3;
     public AudioClip examTheme;
+    public AudioClip endingDead;
 
     public float _Volume = 1f;
 
