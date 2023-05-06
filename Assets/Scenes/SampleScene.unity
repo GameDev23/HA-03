@@ -499,8 +499,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4c66332ddf7a7dc4189b50ff32ac8e2c, type: 3}
   - {fileID: 21300000, guid: a8286d3af4dae4f4982dc1b0d6b280f2, type: 3}
   - {fileID: 21300000, guid: 0c958654a2c8dbb45b78369740588947, type: 3}
+  samwelSprites:
   - {fileID: 21300000, guid: ee39fe000e789e54c92696f5330bd584, type: 3}
   - {fileID: 21300000, guid: b28bf1ed212b7f54d87522f54ab68f5e, type: 3}
+  - {fileID: 21300000, guid: fd6cfb38097a14f4fa915b8f33449828, type: 3}
+  - {fileID: 21300000, guid: f7f0e62b145e6094ca4ff65e98d694be, type: 3}
   test: 0
 --- !u!4 &558888427
 Transform:
@@ -1096,6 +1099,8 @@ MonoBehaviour:
   usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
   cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
   backRoomEntrance: {fileID: 8300000, guid: 7d118fb9a4c6b10449069eb50f75400c, type: 3}
+  tenseRob: {fileID: 8300000, guid: 28ab4252c9d98da4c9a0b7ca093e4c44, type: 3}
+  diceRoll: {fileID: 8300000, guid: 5d8f727846d298b468fb25da1dea207f, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:
@@ -1542,6 +1547,7 @@ MonoBehaviour:
   hasEaten: 0
   hasKey: 0
   wardrobeIsLocked: 1
+  hasPrayed: 0
   pencilCount: 0
   knowsAboutPfandflaschengeraet: 0
   hasCollectedPfandflaschengeraet: 0

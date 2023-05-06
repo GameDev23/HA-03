@@ -15,8 +15,8 @@ public class Exam : BaseState
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
         options = new List<string>();
-        Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[9];
-        textMesh.text = "What a lovely day at the RUB today. Is that cloud shaped like a dragon? I better get to my exam";
+        Manager.Instance.backgroundImage.sprite = Manager.Instance.samwelSprites[2];
+        textMesh.text = "Les goooo";
 
     }
 

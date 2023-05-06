@@ -20,7 +20,7 @@ public class LeavingHouse : BaseState
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
         options = new List<string>();
-        Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[9];
+        Manager.Instance.backgroundImage.sprite = Manager.Instance.samwelSprites[1];
         options.Add(option_normal_way);
         options.Add(option_shady_fast_way);
         state.ShowDialogOptions(this, options);
@@ -36,7 +36,14 @@ public class LeavingHouse : BaseState
     {
         //  Switchiing state
         if (option.Equals(option_normal_way)) {
-            stateManager.SwitchState(stateManager.gettingRobbed);
+            stateManager.SwitchState(stateManager.normalWay);
+            return;
+        }
+
+        if (option.Equals(option_shady_fast_way))
+        {
+            stateManager.SwitchState(stateManager.shadyWay);
+            return;
         }
     }
 

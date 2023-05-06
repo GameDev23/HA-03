@@ -37,6 +37,7 @@ public class StateManager : MonoBehaviour
     public BaseState gettingRobbed = new GettingRobbed();
     public BaseState normalWay = new NormalWay();
     public BaseState shadyWay = new shadyWayToUni();
+    public BaseState dead = new Dead();
     public BaseState exam = new Exam();
 
     
@@ -52,6 +53,7 @@ public class StateManager : MonoBehaviour
     public bool hasEaten = false;
     public bool hasKey = false;
     public bool wardrobeIsLocked = true;
+    public bool hasKnife = false;
     public int pencilCount = 0;
     public bool knowsAboutPfandflaschengeraet;
     public bool hasCollectedPfandflaschengeraet;

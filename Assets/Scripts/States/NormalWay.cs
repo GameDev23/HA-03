@@ -9,6 +9,7 @@ public class NormalWay : BaseState
     private List<string> options;
     private TextMeshProUGUI textMesh;
     private string goToExam = "proceed";
+    private string goBackHome = "return home";
 
     public override void EnterState(StateManager state)
     {
@@ -16,8 +17,9 @@ public class NormalWay : BaseState
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
         options = new List<string>();
-        Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[9];
+        Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[1];
         options.Add(goToExam);
+        options.Add(goBackHome);
         state.ShowDialogOptions(this, options);
         textMesh.text = "What a lovely day at the RUB today. Is that cloud shaped like a dragon? I better get to my exam";
 
@@ -34,7 +36,15 @@ public class NormalWay : BaseState
         if (option.Equals(goToExam))
         {
             stateManager.SwitchState(stateManager.exam);
+            return;
         }
+
+        if (option.Equals(goBackHome)) 
+        {
+            stateManager.SwitchState(stateManager.leavingHouse);    
+            return;
+        }
+
 
     }
 
