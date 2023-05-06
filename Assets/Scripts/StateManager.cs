@@ -68,11 +68,13 @@ public class StateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = backrooms_entrance;
-        currentState.EnterState(Instance);
         AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.standardBackgroundMusicClip;
         AudioManager.Instance.sourceGlobal.Play();
         AudioManager.Instance.sourceGlobal.volume = 0.2f;
+        
+        currentState = backrooms_entrance;
+        currentState.EnterState(Instance);
+
     }
 
     // Update is called once per frame
