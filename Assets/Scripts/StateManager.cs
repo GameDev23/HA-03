@@ -33,6 +33,12 @@ public class StateManager : MonoBehaviour
     public BaseState kitchen = new Kitchen();
     public BaseState livingroom = new Livingroom();
     public BaseState backrooms_entrance = new Backrooms_Entrance();
+    public BaseState leavingHouse = new LeavingHouse();
+    public BaseState gettingRobbed = new GettingRobbed();
+    public BaseState normalWay = new NormalWay();
+    public BaseState shadyWay = new shadyWayToUni();
+    public BaseState exam = new Exam();
+
     
     
     /// end of (1)
@@ -68,7 +74,7 @@ public class StateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = mainMenu;
+        currentState = leavingHouse;
         currentState.EnterState(Instance);
         AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.standardBackgroundMusicClip;
         AudioManager.Instance.sourceGlobal.Play();
