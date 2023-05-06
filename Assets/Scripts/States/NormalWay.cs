@@ -35,7 +35,7 @@ public class NormalWay : BaseState
         //  Switchiing state
         if (option.Equals(goToExam))
         {
-            stateManager.SwitchState(stateManager.exam);
+            stateManager.SwitchState(stateManager.lecturehallEntrance);
             return;
         }
 

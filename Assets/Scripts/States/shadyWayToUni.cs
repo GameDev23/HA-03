@@ -16,7 +16,7 @@ public class shadyWayToUni : BaseState
     private bool bottlesOffered = false;
 
     private string goToExam = "Proceed";
-    private string goToHell = "Proceed";
+    private string goToHell = "Proceed..";
 
     // Risk it or go back
     private string samwellTarly = "I'm not risking it. Going back";
@@ -195,6 +195,7 @@ public class shadyWayToUni : BaseState
             wantPray = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
+            return;
         }
 
         if (option.Equals(fight))
@@ -202,6 +203,7 @@ public class shadyWayToUni : BaseState
             wantFight = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
+            return;
         }
 
         if (option.Equals(bribe))
@@ -209,18 +211,21 @@ public class shadyWayToUni : BaseState
             wantBribe = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
+            return;
         }
 
         // Going to exam
         if (option.Equals(goToExam))
         {
-            stateManager.SwitchState(stateManager.exam);
+            stateManager.SwitchState(stateManager.lecturehallEntrance);
+            return;
         }
 
         // Dieing
         if (option.Equals(goToHell))
         {
-            stateManager.SwitchState(stateManager.dead);
+            stateManager.SwitchState(stateManager.endingDead);
+            return;
         }
 
 

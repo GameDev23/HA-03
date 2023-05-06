@@ -10,7 +10,7 @@ public class Livingroom : BaseState
     private TextMeshProUGUI textMesh;
     private string optionPfand;
     private string optionLeaveToKitchen;
-    private string optionLeaveHome = "Leave and go to university";
+    private string optionLeaveHome = "Get ready to leave to university";
     public override void EnterState(StateManager state)
     {
         textMesh = Manager.Instance.textMesh;
@@ -62,7 +62,7 @@ public class Livingroom : BaseState
 
         if (option.Equals(optionLeaveHome))
         {
-            stateManager.SwitchState(stateManager.lecturehallEntrance);
+            stateManager.SwitchState(stateManager.leavingHouse);
         }
     }
 
