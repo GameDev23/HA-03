@@ -20,7 +20,7 @@ public class Manager : MonoBehaviour
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;
-    public GameObject VolumeSlider;
+    public Slider VolumeSlider;
 
     public int test = 0;
 

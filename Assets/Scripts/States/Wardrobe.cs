@@ -23,7 +23,7 @@ public class Wardrobe : BaseState
         stateManager = state;
         if (AudioManager.Instance.sourceGlobal.volume != 0f)
             AudioManager.Instance.sourceGlobal.volume = 0f;
-        
+
         Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[2];
         Manager.Instance.textMesh.text = "";
         AudioManager.Instance.source.clip = AudioManager.Instance.fashion;

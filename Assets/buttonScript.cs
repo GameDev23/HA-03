@@ -10,6 +10,9 @@ public class buttonScript : MonoBehaviour
     
     public void OnClick()
     {
+        AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.Click, 0.1f);
+        AudioManager.Instance.source.PlayOneShot(AudioManager.Instance.Click, 0.1f);
+        
         currentState.OptionClicked(index, option);
     }
 }

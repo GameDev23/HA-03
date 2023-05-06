@@ -10,6 +10,7 @@ public class Livingroom : BaseState
     private TextMeshProUGUI textMesh;
     private string optionPfand;
     private string optionLeaveToKitchen;
+    private string optionLeaveHome = "Leave and go to university";
     public override void EnterState(StateManager state)
     {
         textMesh = Manager.Instance.textMesh;
@@ -19,6 +20,7 @@ public class Livingroom : BaseState
         optionLeaveToKitchen = "Head back to the kitchen";
         options.Add(optionPfand);
         options.Add(optionLeaveToKitchen);
+        options.Add(optionLeaveHome);
 
         Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[6];
         textMesh.text = "Ayo,  this looks like a german gold mine in here";
@@ -56,6 +58,11 @@ public class Livingroom : BaseState
         if (option.Equals(optionLeaveToKitchen))
         {
             stateManager.SwitchState(stateManager.kitchen);
+        }
+
+        if (option.Equals(optionLeaveHome))
+        {
+            stateManager.SwitchState(stateManager.lecturehallEntrance);
         }
     }
 

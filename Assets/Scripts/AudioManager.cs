@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip wrongChoice;
     public AudioClip rightChoice;
     public AudioClip endingPassed;
+    public AudioClip Click;
+    public AudioMixer Mixer;
+
+
 
     public float _Volume = 1f;
 
@@ -45,7 +50,9 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        float vol;
+        Mixer.GetFloat("MainVol", out vol);
+        Manager.Instance.VolumeSlider.value = vol;
     }
 
     // Update is called once per frame

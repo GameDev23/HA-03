@@ -52,6 +52,7 @@ public class LecturehallSeat : BaseState
         {
             AudioManager.Instance.sourceGlobal.clip = AudioManager.Instance.examTheme;
             AudioManager.Instance.sourceGlobal.Play();
+            AudioManager.Instance.sourceGlobal.volume = 0.2f;
         }
 
         if (!isExamOver)
