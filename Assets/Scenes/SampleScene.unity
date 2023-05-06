@@ -1195,7 +1195,8 @@ MonoBehaviour:
   bridge: {fileID: 21300000, guid: e59b914712a3ec342a53c6379d98e358, type: 3}
   key: {fileID: 633238231}
   layoutObj: {fileID: 111039384}
-  buttonPrefab: {fileID: 2154417904493327795, guid: 6e7bd34d4c107fd4a96e76f8bc802a53, type: 3}
+  buttonPrefab: {fileID: 2154417904493327795, guid: 6e7bd34d4c107fd4a96e76f8bc802a53,
+    type: 3}
   cameraFlash: {fileID: 801443419}
   backgroundSprites:
   - {fileID: 21300000, guid: f103df300268edb4e917bcfb88c17d7c, type: 3}
@@ -1206,6 +1207,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4c66332ddf7a7dc4189b50ff32ac8e2c, type: 3}
   - {fileID: 21300000, guid: a8286d3af4dae4f4982dc1b0d6b280f2, type: 3}
   - {fileID: 21300000, guid: 0c958654a2c8dbb45b78369740588947, type: 3}
+  samwelSprites:
+  - {fileID: 21300000, guid: ee39fe000e789e54c92696f5330bd584, type: 3}
+  - {fileID: 21300000, guid: b28bf1ed212b7f54d87522f54ab68f5e, type: 3}
+  - {fileID: 21300000, guid: fd6cfb38097a14f4fa915b8f33449828, type: 3}
+  - {fileID: 21300000, guid: f7f0e62b145e6094ca4ff65e98d694be, type: 3}
   backgroundSpritesDavid:
   - {fileID: 21300000, guid: 7d0ca2f727cb28c43bc8faeffde0f8c3, type: 3}
   - {fileID: 21300000, guid: 6fcf147a602de2d4ba3855fdb7719c75, type: 3}
@@ -2078,7 +2084,8 @@ MonoBehaviour:
   sourceGlobal: {fileID: 1575410353}
   sourceBackrooms: {fileID: 1575410355}
   fashion: {fileID: 8300000, guid: c85030cf9e57b8c4c92f7c8a378142e2, type: 3}
-  standardBackgroundMusicClip: {fileID: 8300000, guid: 6752873ed99997543af5d71446162a7a, type: 3}
+  standardBackgroundMusicClip: {fileID: 8300000, guid: 6752873ed99997543af5d71446162a7a,
+    type: 3}
   zipper: {fileID: 8300000, guid: a488a249aed91fc4b8cf55a520ec159a, type: 3}
   eatApple: {fileID: 8300000, guid: 8531d87b6f88f784eb04ed9edb0c1729, type: 3}
   collectItem: {fileID: 8300000, guid: 067f6a5adf263a942a8f2a6aacc3ae5e, type: 3}
@@ -2089,6 +2096,8 @@ MonoBehaviour:
   usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
   cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
   backRoomEntrance: {fileID: 8300000, guid: 7d118fb9a4c6b10449069eb50f75400c, type: 3}
+  tenseRob: {fileID: 8300000, guid: 28ab4252c9d98da4c9a0b7ca093e4c44, type: 3}
+  diceRoll: {fileID: 8300000, guid: 5d8f727846d298b468fb25da1dea207f, type: 3}
   crowded: {fileID: 8300000, guid: b43a7407d48361049964a6d18df59498, type: 3}
   gibberish1: {fileID: 8300000, guid: 3d7f048975eed3a45aa1f4159268ea28, type: 3}
   gibberish2: {fileID: 8300000, guid: 7ebda990dcf08034b9120b1d59518d5f, type: 3}
@@ -2125,7 +2134,8 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2221,7 +2231,8 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2317,7 +2328,8 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2702,6 +2714,7 @@ MonoBehaviour:
   hasEaten: 0
   hasKey: 0
   wardrobeIsLocked: 1
+  hasPrayed: 0
   pencilCount: 0
   knowsAboutPfandflaschengeraet: 0
   hasCollectedPfandflaschengeraet: 0

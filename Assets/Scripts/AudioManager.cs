@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public AudioSource source;
     public AudioSource sourceGlobal;
+    public AudioSource sourceSamwel;
     public AudioSource sourceBackrooms;
     public AudioClip fashion;
     public AudioClip standardBackgroundMusicClip;
@@ -35,6 +36,10 @@ public class AudioManager : MonoBehaviour
     public AudioMixer Mixer;
 
 
+    public AudioClip tenseRob;
+    public AudioClip diceRoll;
+    public AudioClip thunder;
+    public AudioClip beaten;
 
     public float _Volume = 1f;
 

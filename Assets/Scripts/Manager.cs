@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;
     public Slider VolumeSlider;
+    public List<Sprite> samwelSprites = new List<Sprite>();
 
     public int test = 0;
 
