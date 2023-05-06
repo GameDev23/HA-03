@@ -10,11 +10,11 @@ public class Backrooms_Entrance : BaseState
     private List<string> options;
     private TextMeshProUGUI textMesh;
 
-    private string Introduction = ("Sussy Baka");
+    private string Introduction = ("You somehow entered the Backrooms But how ? ");
 
     private string option1 = ("Item 1");
     private string option2 = ("Action0.5");
-    private string option3 = ("Action1");
+    private string option3 = ("Start Music because you are scared");
     private string option4 = ("Leave");
 
 
@@ -24,6 +24,13 @@ public class Backrooms_Entrance : BaseState
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
         options = new List<string>();
+
+        AudioManager.Instance.sourceGlobal.volume = 0.0f;
+        AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.backroomsbackgroundmusic;
+        AudioManager.Instance.sourceBackrooms.Play();
+        AudioManager.Instance.sourceBackrooms.volume = 0.2f;        
+
+
 
         options.Add(option1);
         options.Add(option2);
@@ -49,9 +56,23 @@ public class Backrooms_Entrance : BaseState
         if (option.Equals(option1))
         {
             Debug.Log("testSus");
+
+        }else if (option.Equals(option2))
+        {
+            Debug.Log("testSus2");
+
+        }else if (option.Equals(option3))
+        {
+            Debug.Log("testSus3");
             AudioManager.Instance.sourceGlobal.volume = 0.0f;
             AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.backRoomEntrance;
             AudioManager.Instance.sourceBackrooms.Play();
+            AudioManager.Instance.sourceBackrooms.volume = 0.2f;
+
+        }else if (option.Equals(option4))
+        {
+            Debug.Log("testsus4");
+
         }
 
     }

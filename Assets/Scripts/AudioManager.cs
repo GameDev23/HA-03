@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip usbConnected;
     public AudioClip cashRegister;
     public AudioClip backRoomEntrance;
+    public AudioClip backroomsbackgroundmusic;
 
     public float _Volume = 1f;
 

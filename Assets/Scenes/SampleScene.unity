@@ -1093,7 +1093,8 @@ MonoBehaviour:
   barcodeScanner: {fileID: 8300000, guid: 436cc116ddde2d749ae68c041efb0367, type: 3}
   usbConnected: {fileID: 8300000, guid: 77030b6988b50d14eb5c46f85f649927, type: 3}
   cashRegister: {fileID: 8300000, guid: e660c1518c405f649a3b8dd0a832e044, type: 3}
-  backRoomEntrance: {fileID: 8300000, guid: 7d118fb9a4c6b10449069eb50f75400c, type: 3}
+  backRoomEntrance: {fileID: 8300000, guid: a2e551818dd7e6449aeed17c75fc5743, type: 3}
+  backroomsbackgroundmusic: {fileID: 8300000, guid: ea4506b0287139f45aac0480c618df72, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:
