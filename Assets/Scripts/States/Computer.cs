@@ -114,7 +114,7 @@ public class Computer : BaseState
                 if(option.Equals(optionInstallPfand))
                 {
                     options[index] = optionInstallDriver;
-                    AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.usbConnected, 1f);
+                    AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.usbConnected, AudioManager.Instance._Volume);
                     textMesh.text = "Nice. It beeps. That sounds good. Now you only need to install the matching drivers";
                     installSteps = 1;
                 }else if (option.Equals(optionInstallDriver))
@@ -148,8 +148,8 @@ public class Computer : BaseState
             if(stateManager.pfandFlaschenCount > 0)
             {
                 stateManager.cash += 0.25f;
-                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.barcodeScanner, 1f);
-                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.cashRegister, 0.1f);
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.barcodeScanner, AudioManager.Instance._Volume * 1f);
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.cashRegister, AudioManager.Instance._Volume * 0.1f);
                 textMesh.text = "You scanned one of your bottles.\nYou got 0.25$ for that. Easy money\nYou now got " + stateManager.cash + "$ to your name";
                 stateManager.pfandFlaschenCount--;
             }

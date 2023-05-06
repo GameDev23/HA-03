@@ -36,6 +36,7 @@ public class StateManager : MonoBehaviour
     public BaseState lecturehallEntrance = new LecturehallEntrance();
     public BaseState lecturehallSeat = new LecturehallSeat();
     public BaseState endingDead = new EndingDead();
+    public BaseState endingPassed = new EndingPassed();
     
     
     /// end of (1)

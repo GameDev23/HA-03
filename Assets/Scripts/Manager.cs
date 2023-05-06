@@ -19,6 +19,8 @@ public class Manager : MonoBehaviour
     public GameObject cameraFlash;
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
+    public GameObject Panel;
+    public GameObject VolumeSlider;
 
     public int test = 0;
 

@@ -14,18 +14,31 @@ public class LecturehallSeat : BaseState
     private bool isPencilWindow = false;
     private bool isExamOver = false;
     private int questionNo = 0;
-    private int examPoints = 0;
-    private int pointsToPass = 76;
+    private float examPoints = 0;
+    private float pointsToPass = 80f;
+    private float pointsPerCorrectAnswer = 8.5f;
 
     private string optionStart = "start";
 
-    private string question1 = "What is the dog doin?\na)\nb)\nc)\nd)";
-    private string question2 = "What was the dog doin?\na)\nb)\nc)\nd)";
-    private string question3 = "Tell me Y";
-    private string question4 = "question4";
-    private string question5 = "question5";
-    private string question6 = "question6";
-    private string question7 = "question7";
+    private string question1 = "If a tree falls in the forest and no one is around to hear it, does it make a sound?\na) Yes\nb) No\nc) Only if a squirrel is there to witness it\nd) It depends on the type of tree";
+    private string question2 = "Which of the following is NOT a type of cheese?\na) Cheddar\nb) Gouda\nc) Pikachu\nd) Brie)";
+    private string question3 = "What is the most important key on a keyboard?\na) The space bar\nb) The delete key\nc) The shift key\nd) The any key";
+    private string question4 = "What is the best way to solve a difficult math problem?\na) Crying\nb) Giving up\nc) Asking for help\nd) Taking a nap";
+    private string question5 = "A discrete random variable can take on which type of values?\na) Only integer values\nb) Only real values\nc) Both integer and real values\nd) None of the above";
+    private string question6 = "What is the expected value of a discrete random variable X?\na) The square root of the sum of all possible values of X\nb) The sum of all possible values of X divided by the number of values\nc) The maximum value of X\nd) The minimum value of X";
+    private string question7 = "What is the formula for Bayes' Theorem?\na) P(A|B) = P(A) + P(B) - P(A and B)\nb) P(A|B) = P(B|A) * P(A) / P(B)\nc) P(A and B) = P(A) * P(B)\nd) P(A and B) = P(A) + P(B) - P(A|B)";
+    private string question8 = "How many slaps does it take to cook a chicken?\na) 1,230,121\nb) 69,420\nc) 23,034\nd) 24";
+
+    private string question9 = "What is the airspeed velocity of an unladen swallow?\na) African or European?\nb) 42\nc) 3.14\nd) None of the above";
+
+    private string question10 = "When the code finally works after hours of debugging, what do you do?\na) Celebrate with a victory dance\nb) Take a screenshot and post it on social media\nc) Keep quiet and move on to the next task\nd) Go home and take a nap";
+
+    private string question11 =
+        "If you shuffle a deck of cards, what is the probability that the cards are in the exact same order as they were before shuffling?\na) 1 in 52!\nb) 1 in 52\nc) 1 in 2\nd) 1 in 1,235,786,432";
+
+    private string question12 = "What is the best way to impress your computer science professor?\na) Use complex terminology and buzzwords\nb) Code a project from scratch\nc) Bring them coffee every day\nd) Use memes in your presentations";
+    
+    
     
     public override void EnterState(StateManager state)
     {
@@ -92,17 +105,44 @@ public class LecturehallSeat : BaseState
             {
                 textMesh.text = question7;
                 addOptions();
-            }
+            }            
+            else if (questionNo == 7)
+            {
+                textMesh.text = question8;
+                addOptions();
+            }           
+            else if (questionNo == 8)
+            {
+                textMesh.text = question9;
+                addOptions();
+            }            
+            else if (questionNo == 9)
+            {
+                textMesh.text = question10;
+                addOptions();
+            }            
+            else if (questionNo == 10)
+            {
+                textMesh.text = question11;
+                addOptions();
+            }            
+            else if (questionNo == 11)
+            {
+                textMesh.text = question12;
+                addOptions();
+            }            
+
+            
         }
         else
         {
-            textMesh.text = "You achieved " + examPoints + " points\n";
+            textMesh.text = "You achieved " + examPoints + " points of 102 (112 with bonus points)\n";
             if (stateManager.isWearingBalenciaga)
             {
                 examPoints += 10;
                 textMesh.text +=
                     "Gladly you decided to wear your BALENCIAGA® so you got 10 bonus points, resulting in " +
-                    (examPoints) + " points of 122";
+                    (examPoints);
             }
 
             if (examPoints < pointsToPass)
@@ -125,7 +165,7 @@ public class LecturehallSeat : BaseState
     private void decreasePencils()
     {
         int pencilCount = stateManager.pencilCount;
-        int rand = Random.Range(2, 7);
+        int rand = Random.Range(1, 4);
         if (pencilCount >= 20)
         {
             textMesh.text = "Oh no " + rand +
@@ -193,7 +233,10 @@ public class LecturehallSeat : BaseState
         if (option.Equals("touch grass"))
         {
             Debug.Log("Implement win screen here");
-            //TODO
+            //
+            stateManager.SwitchState(stateManager.endingPassed);
+
+            return;
         }
 
         if (isIntro)
@@ -215,9 +258,14 @@ public class LecturehallSeat : BaseState
         }
         else if(questionNo == 0)
         {
-            if (option.Equals("a)"))
+            if (option.Equals("d)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -227,9 +275,14 @@ public class LecturehallSeat : BaseState
         }        
         else if(questionNo == 1)
         {
-            if (option.Equals("a)"))
+            if (option.Equals("c)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -239,9 +292,14 @@ public class LecturehallSeat : BaseState
         }
         else if(questionNo == 2)
         {
-            if (option.Equals("a)"))
+            if (option.Equals("d)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -253,7 +311,12 @@ public class LecturehallSeat : BaseState
         {
             if (option.Equals("a)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -265,7 +328,12 @@ public class LecturehallSeat : BaseState
         {
             if (option.Equals("a)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -275,9 +343,14 @@ public class LecturehallSeat : BaseState
         }
         else if(questionNo == 5)
         {
-            if (option.Equals("a)"))
+            if (option.Equals("b)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
             questionNo++;
@@ -287,16 +360,107 @@ public class LecturehallSeat : BaseState
         }
         else if(questionNo == 6)
         {
-            if (option.Equals("a)"))
+            if (option.Equals("b)"))
             {
-                examPoints += 16;
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
+            }
+            questionNo++;
+            isPencilWindow = true;
+            stateManager.SwitchState(stateManager.lecturehallSeat);
+            return;
+        }        
+        else if(questionNo == 7)
+        {
+            if (option.Equals("c)"))
+            {
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
             }
 
-            //TODO tell points and make end screen
+            questionNo++;
+            isPencilWindow = true;
+            stateManager.SwitchState(stateManager.lecturehallSeat);
+            return;
+        }         
+        else if(questionNo == 8)
+        {
+            if (option.Equals("a)"))
+            {
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
+            }
+
+            questionNo++;
+            isPencilWindow = true;
+            stateManager.SwitchState(stateManager.lecturehallSeat);
+            return;
+        }           
+        else if(questionNo == 9)
+        {
+            if (option.Equals("c)"))
+            {
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
+            }
+
+            questionNo++;
+            isPencilWindow = true;
+            stateManager.SwitchState(stateManager.lecturehallSeat);
+            return;
+        }   
+        
+        else if(questionNo == 10)
+        {
+            if (option.Equals("a)"))
+            {
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
+            }
+
+            questionNo++;
+            isPencilWindow = true;
+            stateManager.SwitchState(stateManager.lecturehallSeat);
+            return;
+        }        
+        else if(questionNo == 11)
+        {
+            if (option.Equals("d)"))
+            {
+                examPoints += pointsPerCorrectAnswer;
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.rightChoice, AudioManager.Instance._Volume);
+            }
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.wrongChoice, AudioManager.Instance._Volume);
+            }
+
+            //tell points and make end screen
             isExamOver = true;
             stateManager.SwitchState(stateManager.lecturehallSeat);
             return;
-        }
+        }        
+
 
         if (option.Equals("uff"))
         {
