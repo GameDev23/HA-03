@@ -12,9 +12,7 @@ public class MainMenu : BaseState
         stateManager = state;
         
         manager = Manager.Instance;
-        Manager.Instance.test += 1;
-        Debug.Log(manager.test + "  " + Manager.Instance.test);
-        
+        Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSpritesDavid[4];
         //create new list which will contain the options listed above
         List<string> options = new List<string>();
         //add some options

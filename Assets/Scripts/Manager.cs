@@ -20,10 +20,12 @@ public class Manager : MonoBehaviour
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;
+    public GameObject PanelTips;
+    public GameObject PanelWalktrough;
     public Slider VolumeSlider;
     public List<Sprite> samwelSprites = new List<Sprite>();
-
-    public int test = 0;
+    public TextMeshProUGUI volumeTextMesh;
+    
 
     private void Awake()
     {
@@ -38,6 +40,13 @@ public class Manager : MonoBehaviour
     void Start()
     {
         
+        float vol;
+        AudioManager.Instance.Mixer.GetFloat("MainVol", out vol);
+        VolumeSlider.value = vol;
+        volumeTextMesh.text = "Volume  " + (int) ((vol + 80) * 1.25f) +"%";
+
+        
+
     }
 
     // Update is called once per frame

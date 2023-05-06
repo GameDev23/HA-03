@@ -52,7 +52,7 @@ public class Zuhause_Bedroom : BaseState
 
         }
         optionWardrobe = "Head to the wardrobe.";
-        optionComputer = "Go to the computer";
+        optionComputer = "Go to your desk";
         optionKitchen = "Head to the kitchen";
         options.Add(optionWardrobe);
         options.Add(optionKitchen);

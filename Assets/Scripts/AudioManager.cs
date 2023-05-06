@@ -55,9 +55,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float vol;
-        Mixer.GetFloat("MainVol", out vol);
-        Manager.Instance.VolumeSlider.value = vol;
+
     }
 
     // Update is called once per frame

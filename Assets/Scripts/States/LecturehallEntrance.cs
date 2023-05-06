@@ -17,6 +17,9 @@ public class LecturehallEntrance : BaseState
     private int dialogStep = 0;
 
     private string optionTakeASeat = "Take a seat";
+    private string optionGoToToilet = "Go to the toilet to relief yourself once more";
+    
+    
     private string optionTalk1 = "...";
     private string optionTalk2 = "confirm it";
     private string optionTalk3 = "Accept the offer and take a seat afterwards";
@@ -39,6 +42,7 @@ public class LecturehallEntrance : BaseState
         {
             textMesh.text = "Finally arrived. Now take a seat and ace this exam";
             options.Add(optionTakeASeat);
+            options.Add(optionGoToToilet);
 
         }
         else if (isDialog)
@@ -91,6 +95,11 @@ public class LecturehallEntrance : BaseState
                 isDialog = false;
                 stateManager.SwitchState(stateManager.lecturehallSeat);
             }
+        } 
+        else if (option.Equals(optionGoToToilet))
+        {
+            stateManager.SwitchState(stateManager.backrooms_entrance);
+            return;
         }
         else if (option.Equals(optionTalk1) && dialogStep == 0)
         {
