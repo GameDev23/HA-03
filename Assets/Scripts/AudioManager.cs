@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip diceRoll;
     public AudioClip thunder;
     public AudioClip beaten;
+    public AudioClip backroomsbackgroundmusic;
 
     public float _Volume = 1f;
 
