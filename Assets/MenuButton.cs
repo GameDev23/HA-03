@@ -8,4 +8,5 @@ public class MenuButton : MonoBehaviour
     {
         Manager.Instance.Panel.SetActive(!Manager.Instance.Panel.activeSelf);
     }
+    
 }

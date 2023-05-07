@@ -43,17 +43,9 @@ public class Manager : MonoBehaviour
     void Start()
     {
         
-        float vol;
-        AudioManager.Instance.Mixer.GetFloat("MainVol", out vol);
-        VolumeSlider.value = (vol + 80) * 1.25f;
-        volumeTextMesh.text = "Volume  " + (int) (VolumeSlider.value * 100) +"%";
 
 
         
-
-
-
-
     }
 
     // Update is called once per frame
