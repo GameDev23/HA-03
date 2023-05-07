@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource sourceGlobal;
     public AudioSource sourceSamwel;
     public AudioSource sourceBackrooms;
+    public AudioSource sourceMP3;
+    public AudioSource sourceSFX_DONT_MUTE;
     public AudioClip fashion;
     public AudioClip standardBackgroundMusicClip;
     public AudioClip zipper;
@@ -41,6 +43,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip thunder;
     public AudioClip beaten;
     public AudioClip backroomsbackgroundmusic;
+
+    public GameObject mp3Player;
 
     public float _Volume = 1f;
 

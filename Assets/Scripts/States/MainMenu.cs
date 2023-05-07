@@ -17,12 +17,13 @@ public class MainMenu : BaseState
         List<string> options = new List<string>();
         //add some options
         options.Add("Start");
-        options.Add("Item 2");
+        options.Add("Show MP3-Player");
         options.Add("Item 3");
         options.Add("Item 4");
         options.Add("Item 4");
         //show these options on the panel
         state.ShowDialogOptions(this, options);
+        MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
     }
 
     public override void UpdateState(StateManager state)
@@ -39,6 +40,7 @@ public class MainMenu : BaseState
                 break;
             case 1:
                 manager.textMesh.text = "Not yet implemented";
+                AudioManager.Instance.mp3Player.SetActive(true);
                 break;            
             case 2:
                 manager.textMesh.text = "Not yet implemented";
