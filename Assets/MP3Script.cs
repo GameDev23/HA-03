@@ -27,6 +27,11 @@ public class MP3Script : MonoBehaviour
     {
         audioSource = AudioManager.Instance.sourceMP3;
         Debug.Log(audioSource.volume);
+
+
+        AudioManager.Instance.Mixer.ClearFloat("MP3Vol");
+
+
     }
 
     private void Update()
@@ -43,8 +48,8 @@ public class MP3Script : MonoBehaviour
 
     public void OnValueChanged()
     {
-        
-        audioSource.volume = Mathf.Lerp(0f,1f,volumeSlider.value);
+        float volume = volumeSlider.value;
+        AudioManager.Instance.Mixer.SetFloat("MP3Vol", Mathf.Log10(volume) * 40);
     }
 
 

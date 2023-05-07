@@ -45,8 +45,12 @@ public class Manager : MonoBehaviour
         
         float vol;
         AudioManager.Instance.Mixer.GetFloat("MainVol", out vol);
-        VolumeSlider.value = vol;
-        volumeTextMesh.text = "Volume  " + (int) ((vol + 80) * 1.25f) +"%";
+        VolumeSlider.value = (vol + 80) * 1.25f;
+        volumeTextMesh.text = "Volume  " + (int) (VolumeSlider.value * 100) +"%";
+
+
+        
+
 
 
 

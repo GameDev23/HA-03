@@ -11,8 +11,8 @@ public class VolumeSlider : MonoBehaviour
     public void OnValueChanged(float volume)
     {
 
-            volumeTextMesh.text = "Volume  " + (int) ((volume + 80) * 1.25f) + "%";
-            AudioManager.Instance.Mixer.SetFloat("MainVol", volume);
+            volumeTextMesh.text = "Volume  " + (int)(volume * 100) + "%";
+            AudioManager.Instance.Mixer.SetFloat("MainVol", Mathf.Log10(volume) * 40);
 
     }
 }
