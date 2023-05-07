@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MP3Script : MonoBehaviour
@@ -10,18 +11,21 @@ public class MP3Script : MonoBehaviour
 
     public List<AudioClip> Clips = new List<AudioClip>();
     public TextMeshProUGUI textMesh;
-    
+    public bool isPlaying;
     public static AudioSource audioSource;
+    
     private int currentIndex = 0;
-
     private bool isStarted;
-    private bool isPlaying;
+
+
+
 
 
     private void Start()
     {
-        
+        audioSource = AudioManager.Instance.sourceMP3;
     }
+    
 
     public void setAudioSource(AudioSource source)
     {
@@ -69,7 +73,7 @@ public class MP3Script : MonoBehaviour
         AudioManager.Instance.sourceSFX_DONT_MUTE.PlayOneShot(AudioManager.Instance.Click, 0.2f); 
         if (!isStarted)
         {
-            
+            //do something if player is not started etc
         }
         if (isPlaying)
         {
@@ -83,4 +87,5 @@ public class MP3Script : MonoBehaviour
         }
         
     }
+
 }
