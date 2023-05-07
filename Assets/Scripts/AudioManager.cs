@@ -44,6 +44,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip beaten;
     public AudioClip backroomsbackgroundmusic;
 
+    public GameObject mp3Player;
+
     public float _Volume = 1f;
 
     private void Awake()
