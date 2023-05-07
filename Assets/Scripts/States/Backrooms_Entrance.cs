@@ -20,6 +20,7 @@ public class Backrooms_Entrance : BaseState
     private string option3Start = ("Start Music because you are scared"); //raises Sanity
     private string option4Start = ("You can see a Door APPROACH IT");
     private string openDoor = ("Open Door");
+    private string feelings = ("I Feel unconfortable");
 
 
 
@@ -70,11 +71,19 @@ public class Backrooms_Entrance : BaseState
         if (option.Equals(option1Start))
         {
             Debug.Log("testSus");
+            textMesh.text = "What a strange door, should I really Enter it ? ";
+
+
+
+
+            return;
 
         }else if (option.Equals(option2Start))
         {
             Debug.Log("testSus2");
 
+
+            return;
         }else if (option.Equals(option3Start))
         {
             Debug.Log("testSus3");
@@ -83,6 +92,9 @@ public class Backrooms_Entrance : BaseState
             AudioManager.Instance.sourceBackrooms.Play();
             AudioManager.Instance.sourceBackrooms.volume = 0.2f;
 
+
+            return;
+
         }else if (option.Equals(option4Start))
         {
             Debug.Log("testsus4");
@@ -90,6 +102,10 @@ public class Backrooms_Entrance : BaseState
             options.Add(openDoor);
             options.Remove(option4Start);
             stateManager.ShowDialogOptions(this, options);
+
+
+
+            return;
 
         }
 
