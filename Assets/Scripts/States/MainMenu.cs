@@ -50,6 +50,7 @@ public class MainMenu : BaseState
                 break;            
             case 4:
                 manager.textMesh.text = "Not yet implemented";
+                stateManager.SwitchState(stateManager.backrooms_entrance);
                 break;
             default:
                 manager.textMesh.text = "INDEX OUT OF BOUNDS  THIS SHOULD NOT OCCUR";

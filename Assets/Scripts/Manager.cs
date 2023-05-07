@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     public static Manager Instance;
     public Canvas canvas;
     public TextMeshProUGUI textMesh;
+    public TextMeshProUGUI SanityNumber;
     public Image backgroundImage;
     public Sprite bedroom;
     public Sprite bridge;
@@ -17,6 +18,7 @@ public class Manager : MonoBehaviour
     public GameObject layoutObj;
     public GameObject buttonPrefab;
     public GameObject cameraFlash;
+    public GameObject PanelSanity;
     public List<Sprite> backgroundSprites = new List<Sprite>();
 
     public int test = 0;
