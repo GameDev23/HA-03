@@ -27,6 +27,7 @@ public class Manager : MonoBehaviour
     public Slider VolumeSlider;
     public List<Sprite> samwelSprites = new List<Sprite>();
     public TextMeshProUGUI volumeTextMesh;
+    public GameObject mp3Player;
     
 
     private void Awake()

@@ -43,8 +43,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip thunder;
     public AudioClip beaten;
     public AudioClip backroomsbackgroundmusic;
-
-    public GameObject mp3Player;
+    
 
     public float _Volume = 1f;
 

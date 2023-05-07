@@ -40,7 +40,7 @@ public class MainMenu : BaseState
                 break;
             case 1:
                 manager.textMesh.text = "Not yet implemented";
-                AudioManager.Instance.mp3Player.SetActive(true);
+                Manager.Instance.mp3Player.SetActive(!Manager.Instance.mp3Player.activeSelf);
                 break;            
             case 2:
                 manager.textMesh.text = "Not yet implemented";
