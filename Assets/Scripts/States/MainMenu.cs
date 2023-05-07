@@ -23,6 +23,7 @@ public class MainMenu : BaseState
         options.Add("Item 4");
         //show these options on the panel
         state.ShowDialogOptions(this, options);
+        MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
     }
 
     public override void UpdateState(StateManager state)

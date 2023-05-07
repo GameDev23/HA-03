@@ -45,7 +45,7 @@ public class Manager : MonoBehaviour
         VolumeSlider.value = vol;
         volumeTextMesh.text = "Volume  " + (int) ((vol + 80) * 1.25f) +"%";
 
-        
+
 
     }
 

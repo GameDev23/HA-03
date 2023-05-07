@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource sourceGlobal;
     public AudioSource sourceSamwel;
     public AudioSource sourceBackrooms;
+    public AudioSource sourceSFX_DONT_MUTE;
     public AudioClip fashion;
     public AudioClip standardBackgroundMusicClip;
     public AudioClip zipper;
