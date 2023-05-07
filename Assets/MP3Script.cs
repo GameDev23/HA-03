@@ -12,7 +12,9 @@ public class MP3Script : MonoBehaviour
     public List<AudioClip> Clips = new List<AudioClip>();
     public TextMeshProUGUI textMesh;
     public bool isPlaying;
+    public Slider volumeSlider;
     public static AudioSource audioSource;
+
     
     private int currentIndex = 0;
     private bool isStarted;
@@ -24,8 +26,27 @@ public class MP3Script : MonoBehaviour
     private void Start()
     {
         audioSource = AudioManager.Instance.sourceMP3;
+        Debug.Log(audioSource.volume);
     }
-    
+
+    private void Update()
+    {
+        if (isStarted)
+        {
+            volumeSlider.gameObject.SetActive(true);
+        }
+        else
+        {
+            volumeSlider.gameObject.SetActive(false);
+        }
+    }
+
+    public void OnValueChanged()
+    {
+        
+        audioSource.volume = Mathf.Lerp(0f,1f,volumeSlider.value);
+    }
+
 
     public void setAudioSource(AudioSource source)
     {
@@ -74,6 +95,7 @@ public class MP3Script : MonoBehaviour
         if (!isStarted)
         {
             //do something if player is not started etc
+            isStarted = true;
         }
         if (isPlaying)
         {
@@ -87,5 +109,5 @@ public class MP3Script : MonoBehaviour
         }
         
     }
-
+    
 }
