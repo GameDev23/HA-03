@@ -126,10 +126,15 @@ public class Computer : BaseState
                 else if (option.Equals(optionWaitForDrivers))
                 {
                     textMesh.text = "Now we have to wait";
+                    float percent = Mathf.Ceil((float)(waitCount + 1) / 7 * 100);
+                    Debug.Log(percent  + "  " + waitCount);
+                    textMesh.text += "    <color=lightblue>" + "Installing " + percent + "%</color>";
                     for (int i = 0; i < waitCount + 1; i++)
                     {
-                        textMesh.text += "..";
+                        textMesh.text += "\n..";
                     }
+
+                    textMesh.text += "\n\n<color=lightblue>(wait some more to proceed)</color>";
 
                     waitCount++;
                     if (waitCount > 7)
