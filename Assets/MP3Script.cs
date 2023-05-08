@@ -11,7 +11,7 @@ public class MP3Script : MonoBehaviour
 
     public List<AudioClip> Clips = new List<AudioClip>();
     public TextMeshProUGUI textMesh;
-    public bool isPlaying;
+    public static bool isPlaying;
     public Slider volumeSlider;
     public static AudioSource audioSource;
 

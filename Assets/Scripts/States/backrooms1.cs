@@ -94,7 +94,7 @@ public class backrooms1 : BaseState
         }else if (option.Equals(option3Start))
         {
             Debug.Log("testSus3");
-            AudioManager.Instance.mp3Player.SetActive(true);
+            Manager.Instance.mp3Player.SetActive(true);
 
 
             return;

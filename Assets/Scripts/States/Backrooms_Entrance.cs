@@ -123,7 +123,7 @@ public class Backrooms_Entrance : BaseState
         }else if (option.Equals(option3Start))//start mp3 player option 3
         {
             Debug.Log("testSus3");
-            AudioManager.Instance.mp3Player.SetActive(true);
+            Manager.Instance.mp3Player.SetActive(true);
 
 
 
@@ -157,10 +157,10 @@ public class Backrooms_Entrance : BaseState
             
         }   
 
-        if(AudioManager.Instance.mp3Player.Equals(true)){
+        if(MP3Script.isPlaying){
             AudioManager.Instance.sourceBackrooms.volume = 0.0f;
-        }else if(AudioManager.Instance.mp3Player.Equals(false)){
-
+        }else 
+        {
             AudioManager.Instance.sourceBackrooms.volume = 0.2f;
         }
 
