@@ -45,6 +45,9 @@ public class StateManager : MonoBehaviour
     public BaseState exam = new Exam();
 
     public BaseState backrooms_level1 = new backrooms1();
+    public BaseState backroomsElevator = new backroomsElevator();
+    public BaseState infiniteRoom = new BackroomsInfiniteRoom();
+    public BaseState shop = new backroomsShop();
     
     
     /// end of (1)
@@ -94,10 +97,10 @@ public class StateManager : MonoBehaviour
 
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        _sanity = Math.Clamp(_sanity, 0, 100);
         currentState.UpdateState(Instance);
     }
     
@@ -118,6 +121,11 @@ public class StateManager : MonoBehaviour
         currentState = state;
         state.EnterState(Instance);
     }
+
+
+
+
+    
 
     public void ShowDialogOptions(BaseState state, List<string> options)
     {
