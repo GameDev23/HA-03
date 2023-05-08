@@ -136,6 +136,7 @@ public class shadyWayToUni : BaseState
                 // Only enough bottles
                 else if (stateManager.pfandFlaschenCount >= 20)
                 {
+                    Debug.Log("Has enought bottles to pay robber of");
                     options.Add(offerBottles);
                     state.ShowDialogOptions(this, options);
                     textMesh.text = "Maybe the robbers have a <color=yellow>Pfandflaschengerät</color>...";
@@ -161,7 +162,7 @@ public class shadyWayToUni : BaseState
             {
                 options.Add(goToExam);
                 state.ShowDialogOptions(this, options);
-                textMesh.text = "The robbers happen to have a Pfandflaschengerät \n offered all your bottles for your life! \n You are free to go to the exam ";
+                textMesh.text = "The robbers happen to have a <color=yellow>Pfandflaschengerät</color> \n offered all your bottles for your life! \n You are free to go to the exam ";
             }
 
             else if (offeredThemCash)
@@ -187,12 +188,14 @@ public class shadyWayToUni : BaseState
         // Scene 1 options
         if (option.Equals(samwellTarly)) 
         {
+            Debug.Log("Option 1");
             stateManager.SwitchState(stateManager.leavingHouse);
             return;
         }
 
         if (option.Equals(serBarristanSelmy)) 
         {
+            Debug.Log("Option 2");
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
             return;
@@ -201,6 +204,7 @@ public class shadyWayToUni : BaseState
         //Scene 2 options
         if (option.Equals(pray)) 
         {
+            Debug.Log("Option 3");
             wantPray = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
@@ -209,6 +213,7 @@ public class shadyWayToUni : BaseState
 
         if (option.Equals(fight))
         {
+            Debug.Log("Option 4");
             wantFight = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
@@ -217,6 +222,7 @@ public class shadyWayToUni : BaseState
 
         if (option.Equals(bribe))
         {
+            Debug.Log("Option 5");
             wantBribe = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
@@ -224,15 +230,18 @@ public class shadyWayToUni : BaseState
         }
 
         // Scene 3 options
-        if (options.Equals(offerBottles))
+        if (option.Equals(offerBottles))
         { 
+            Debug.Log("Option 6");
             bottlesOffered = true;
+            AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.barcodeScanner, 1f);
+            AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.cashRegister, 1f);
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
             return;
         }
 
-        if (options.Equals(offerCash)) 
+        if (option.Equals(offerCash)) 
         {
             offeredThemCash = true;
             currentScene += 1;
