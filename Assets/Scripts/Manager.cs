@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     public static Manager Instance;
     public Canvas canvas;
     public TextMeshProUGUI textMesh;
+    public TextMeshProUGUI SanityNumber;
     public Image backgroundImage;
     public Sprite bedroom;
     public Sprite bridge;
@@ -17,6 +18,7 @@ public class Manager : MonoBehaviour
     public GameObject layoutObj;
     public GameObject buttonPrefab;
     public GameObject cameraFlash;
+    public GameObject PanelSanity;
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;
@@ -25,6 +27,7 @@ public class Manager : MonoBehaviour
     public Slider VolumeSlider;
     public List<Sprite> samwelSprites = new List<Sprite>();
     public TextMeshProUGUI volumeTextMesh;
+    public GameObject mp3Player;
     
 
     private void Awake()
@@ -40,13 +43,9 @@ public class Manager : MonoBehaviour
     void Start()
     {
         
-        float vol;
-        AudioManager.Instance.Mixer.GetFloat("MainVol", out vol);
-        VolumeSlider.value = vol;
-        volumeTextMesh.text = "Volume  " + (int) ((vol + 80) * 1.25f) +"%";
+
 
         
-
     }
 
     // Update is called once per frame

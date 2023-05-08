@@ -44,6 +44,7 @@ public class StateManager : MonoBehaviour
     public BaseState dead = new Dead();
     public BaseState exam = new Exam();
 
+    public BaseState backrooms_level1 = new backrooms1();
     
     
     /// end of (1)
@@ -64,6 +65,8 @@ public class StateManager : MonoBehaviour
     public bool hasInstalledPfandflaschengeraet;
     public int pfandFlaschenCount = 0;
     public float cash = 0f;
+    public int _sanity = 100;
+
     /// 
 
     #endregion
@@ -88,13 +91,13 @@ public class StateManager : MonoBehaviour
         temp.Add("");
         ShowDialogOptions(currentState, temp );
         currentState.EnterState(Instance);
-        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        _sanity = Math.Clamp(_sanity, 0, 100);
         currentState.UpdateState(Instance);
     }
     
