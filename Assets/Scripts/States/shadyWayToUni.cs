@@ -14,6 +14,7 @@ public class shadyWayToUni : BaseState
     private bool wantBribe = false;
     private bool wantFight = false;
     private bool bottlesOffered = false;
+    private bool offeredThemCash = false;
 
     private string goToExam = "Proceed";
     private string goToHell = "Proceed..";
@@ -27,7 +28,9 @@ public class shadyWayToUni : BaseState
     private string fight = "my Mama didn't raise a coward";
     private string pray = "summon the gods of the RUB to your aid";
 
+    private string offerCash = "offer Money";
     private string offerBottles = "offer bottles";
+
 
     public override void EnterState(StateManager state)
     {
@@ -113,57 +116,63 @@ public class shadyWayToUni : BaseState
             // Bribing for your survival
             else if (wantBribe)
             {
-                // You habe enough money
-                if (stateManager.cash >= 20.0f)
+                // You habe enough money and bottles
+                if (stateManager.cash >= 20.0f && stateManager.pfandFlaschenCount >= 20)
                 {
-                    options.Add(goToExam);
+                    options.Add(offerBottles);
+                    options.Add(offerCash);
                     state.ShowDialogOptions(this, options);
-                    textMesh.text = "You bribe the robbers off with the cash you collected from the bottles\n Thank god for the Pfandgesetzgebung ";
+                    textMesh.text = "You have some merchandise, what do you choose to offer?";
                 }
 
-                //No enough money
+                //  Only enough money
+                else if (stateManager.cash >= 20.0f)
+                {
+                    options.Add(offerCash);
+                    state.ShowDialogOptions(this, options);
+                    textMesh.text = "You have spare cash to offer a bribe...";
+                }
+
+                // Only enough bottles
+                else if (stateManager.pfandFlaschenCount >= 20)
+                {
+                    options.Add(offerBottles);
+                    state.ShowDialogOptions(this, options);
+                    textMesh.text = "Maybe the robbers have a <color=yellow>Pfandflaschengerät</color>...";
+                }
+
+                // Not enough money or bottles
                 else
-                {
-                    if (stateManager.pfandFlaschenCount >= 25)
-                    {
-                        // Offer bottles
-                        options.Add(offerBottles);
-                        state.ShowDialogOptions(this, options);
-                        textMesh.text = "Ooops! You didn't collect enough money from the Pfandflaschen \n Maybe the robbers have a <color=yellow>Pfandflaschengerät</color>...";
-                    }
-                    else
-                    {
-                        options.Add(goToHell);
-                        state.ShowDialogOptions(this, options);
-                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
-                        textMesh.text = "The robbers take insult in your offering of such little money \n They rob, bit you and leave you for dead";
-                    }
-                }
-
-            }
-
-            else if (bottlesOffered) 
-            {
-                // Chance that robbers have the Pfandflaschengerät
-                int rnd = Random.Range(1, 3);
-
-                if (rnd == 1)
-                {
-                    options.Add(goToExam);
-                    state.ShowDialogOptions(this, options);
-                    textMesh.text = "The robbers happen to have a Pfandflaschengerät \n offered all your bottles for your life! \n You are free to go to the exam ";
-                }
-                else 
                 {
                     options.Add(goToHell);
                     state.ShowDialogOptions(this, options);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
-                    textMesh.text = "What kind of ridiculous question is that?! They're robbers not your friendly neighborhood Bottle collected \n They rob, bit you and leave you for dead";
+                    textMesh.text = "The robbers take insult in your offering of such little money \n They rob, bit you and leave you for dead";
                 }
 
             }
 
         }
+
+
+        else if (currentScene == 3)
+        {
+            if (bottlesOffered)
+            {
+                options.Add(goToExam);
+                state.ShowDialogOptions(this, options);
+                textMesh.text = "The robbers happen to have a Pfandflaschengerät \n offered all your bottles for your life! \n You are free to go to the exam ";
+            }
+
+            else if (offeredThemCash)
+            {
+                options.Add(goToExam);
+                state.ShowDialogOptions(this, options);
+                textMesh.text = "You bribe the robbers off with the cash you collected from the bottles\n Thank god for the Pfandgesetzgebung";
+            }
+
+        }
+
 
     }
 
@@ -209,6 +218,23 @@ public class shadyWayToUni : BaseState
         if (option.Equals(bribe))
         {
             wantBribe = true;
+            currentScene += 1;
+            stateManager.SwitchState(stateManager.shadyWay);
+            return;
+        }
+
+        // Scene 3 options
+        if (options.Equals(offerBottles))
+        { 
+            bottlesOffered = true;
+            currentScene += 1;
+            stateManager.SwitchState(stateManager.shadyWay);
+            return;
+        }
+
+        if (options.Equals(offerCash)) 
+        {
+            offeredThemCash = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
             return;
