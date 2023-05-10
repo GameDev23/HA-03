@@ -147,7 +147,7 @@ public class StateManager : MonoBehaviour
             //instatiate new button option and put it into vertical layout grid
             GameObject newButton = Instantiate(buttonPrefab, layout.transform);
             optionList.Add(newButton);
-            buttonScript script = newButton.GetComponent<buttonScript>();
+            buttonScript script = newButton.GetComponentInChildren<buttonScript>();
             newButton.GetComponent<TextMeshProUGUI>().text = option;
             newButton.transform.SetSiblingIndex(index);
             

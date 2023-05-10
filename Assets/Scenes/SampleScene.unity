@@ -123,109 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &23235163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 23235164}
-  - component: {fileID: 23235165}
-  m_Layer: 5
-  m_Name: Volume Slider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &23235164
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23235163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 170577067}
-  - {fileID: 2069150150}
-  - {fileID: 467797041}
-  m_Father: {fileID: 1923849258}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4799, y: 33}
-  m_SizeDelta: {x: 160, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &23235165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23235163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.082225285, g: 0.5566038, b: 0, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1453651314}
-  m_FillRect: {fileID: 435051773}
-  m_HandleRect: {fileID: 1453651313}
-  m_Direction: 0
-  m_MinValue: 0.000001
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1923849261}
-        m_TargetAssemblyTypeName: MP3Script, Assembly-CSharp
-        m_MethodName: OnValueChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &12853896
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +258,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12853896}
   m_CullTransparentMesh: 1
+--- !u!1 &23235163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23235164}
+  - component: {fileID: 23235165}
+  m_Layer: 5
+  m_Name: Volume Slider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &23235164
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23235163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 170577067}
+  - {fileID: 2069150150}
+  - {fileID: 467797041}
+  m_Father: {fileID: 1923849258}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.4799, y: 33}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &23235165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23235163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.082225285, g: 0.5566038, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1453651314}
+  m_FillRect: {fileID: 435051773}
+  m_HandleRect: {fileID: 1453651313}
+  m_Direction: 0
+  m_MinValue: 0.000001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1923849261}
+        m_TargetAssemblyTypeName: MP3Script, Assembly-CSharp
+        m_MethodName: OnValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &111039384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,8 +1794,7 @@ MonoBehaviour:
   bridge: {fileID: 21300000, guid: e59b914712a3ec342a53c6379d98e358, type: 3}
   key: {fileID: 633238231}
   layoutObj: {fileID: 111039384}
-  buttonPrefab: {fileID: 2154417904493327795, guid: 6e7bd34d4c107fd4a96e76f8bc802a53,
-    type: 3}
+  buttonPrefab: {fileID: 2154417904493327795, guid: 6e7bd34d4c107fd4a96e76f8bc802a53, type: 3}
   cameraFlash: {fileID: 801443419}
   PanelSanity: {fileID: 0}
   backgroundSprites:
@@ -2704,9 +2703,11 @@ MonoBehaviour:
     > wardrobe > balenciaga > leave > kitchen > livingroom > uni > normal way > take
     a seat > d) c) d) a) a) b) b) c) a) c) a) d)
 
-    (Bad ending) same as good one but dont take enough pens or dont tick correct answers
+    (Bad ending) same as good one
+    but dont take enough pens or dont tick correct answers
 
-    (Secret ending) go to lecture hall but decide to go to the toilet'
+    (Secret ending) go
+    to lecture hall but decide to go to the toilet'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3610,8 +3611,7 @@ MonoBehaviour:
   sourceMP3: {fileID: 1575410358}
   sourceSFX_DONT_MUTE: {fileID: 1575410357}
   fashion: {fileID: 8300000, guid: c85030cf9e57b8c4c92f7c8a378142e2, type: 3}
-  standardBackgroundMusicClip: {fileID: 8300000, guid: 6752873ed99997543af5d71446162a7a,
-    type: 3}
+  standardBackgroundMusicClip: {fileID: 8300000, guid: 6752873ed99997543af5d71446162a7a, type: 3}
   zipper: {fileID: 8300000, guid: a488a249aed91fc4b8cf55a520ec159a, type: 3}
   eatApple: {fileID: 8300000, guid: 8531d87b6f88f784eb04ed9edb0c1729, type: 3}
   collectItem: {fileID: 8300000, guid: 067f6a5adf263a942a8f2a6aacc3ae5e, type: 3}
@@ -3637,8 +3637,7 @@ MonoBehaviour:
   diceRoll: {fileID: 8300000, guid: 5d8f727846d298b468fb25da1dea207f, type: 3}
   thunder: {fileID: 8300000, guid: f67ec45f6d4564049b8e782973ede4a1, type: 3}
   beaten: {fileID: 8300000, guid: 7e16f4108772169448b95c0f5ccaae97, type: 3}
-  backroomsbackgroundmusic: {fileID: 8300000, guid: ea4506b0287139f45aac0480c618df72,
-    type: 3}
+  backroomsbackgroundmusic: {fileID: 8300000, guid: ea4506b0287139f45aac0480c618df72, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:
@@ -3664,8 +3663,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3761,8 +3759,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3858,8 +3855,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3955,8 +3951,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4052,8 +4047,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4149,8 +4143,7 @@ AudioSource:
   m_GameObject: {fileID: 1575410350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -4351364976622193939, guid: b52f3329fbea72940b11d2963e236f20,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: -4351364976622193939, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -5787,7 +5780,7 @@ RectTransform:
   - {fileID: 873894720}
   - {fileID: 1681003911}
   m_Father: {fileID: 370159715}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5850,7 +5843,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6752873ed99997543af5d71446162a7a, type: 3}
   - {fileID: 8300000, guid: c7cf350eb9a1af54a9f505f0162c78ca, type: 3}
   textMesh: {fileID: 896796540}
-  isPlaying: 0
   volumeSlider: {fileID: 23235165}
 --- !u!1 &2004583890
 GameObject:
