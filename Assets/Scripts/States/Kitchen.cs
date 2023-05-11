@@ -18,6 +18,7 @@ public class Kitchen : BaseState
     private string optionTakeKey = "Take the key";
     private string optionLivingroom = "Enter the livingroom";
     private string optionPfandgeraet = "Search for the <color=yellow>Pfandflaschengerät</color>";
+    private string optionTakeKnife = "Take knife because,well why not?";
 
     
     public override void EnterState(StateManager state)
@@ -56,6 +57,10 @@ public class Kitchen : BaseState
             options.Add(optionEat);
         if(stateManager.hasEaten && !stateManager.hasKey)
             options.Add(optionTakeKey);
+        if (stateManager.hasEaten && !stateManager.hasKnife) 
+        { 
+            options.Add(optionTakeKnife);
+        }
         if(stateManager.knowsAboutPfandflaschengeraet && !stateManager.hasCollectedPfandflaschengeraet)
             options.Add(optionPfandgeraet);
         options.Add(optionLivingroom);
@@ -80,21 +85,32 @@ public class Kitchen : BaseState
         {
             if(!stateManager.hasKey)
                 Manager.Instance.key.SetActive(true);
+            if (!stateManager.hasKnife)
+                Manager.Instance.knife.SetActive(true);
             stateManager.hasEaten = true;
             audioSource.PlayOneShot(AudioManager.Instance.eatApple, 0.5f);
             textMesh.text = "Yummy, that was healthy compared to the usual stuff you were eating the last days.\nYou even ate the cutlery. There should be nice weather tomorrow.\n\nBy the way, is this the closet <color=yellow>key</color>?";
             Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[4];
             options.Remove(option);
             options.Add(optionTakeKey);
+            options.Add(optionTakeKnife);
             options.Sort();
             stateManager.ShowDialogOptions(this, options);
         }
 
         if (option.Equals(optionTakeKey))
         {
-            Manager.Instance.collectKey();
+            Manager.Instance.CollectItem(Manager.Instance.key);
             options.Remove(option);
             stateManager.hasKey = true;
+            stateManager.ShowDialogOptions(this, options);
+        }
+        
+        if (option.Equals(optionTakeKnife))
+        {
+            Manager.Instance.CollectItem(Manager.Instance.knife);
+            options.Remove(option);
+            stateManager.hasKnife = true;
             stateManager.ShowDialogOptions(this, options);
         }
 

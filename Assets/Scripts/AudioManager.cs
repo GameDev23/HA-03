@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip rightChoice;
     public AudioClip endingPassed;
     public AudioClip Click;
+    public AudioClip DragonRoar;
     public AudioMixer Mixer;
 
 

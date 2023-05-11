@@ -10,10 +10,14 @@ public class NormalWay : BaseState
     private TextMeshProUGUI textMesh;
     private string goToExam = "proceed";
     private string goBackHome = "return home";
+    private GameObject Dragon;
 
     public override void EnterState(StateManager state)
     {
         //Simplificiation in writing
+        Dragon = Manager.Instance.Dragon; // reference to the dragon
+        Manager.Instance.Dragon.SetActive(true);
+        AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.DragonRoar,  2.0f);
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
         options = new List<string>();
@@ -27,7 +31,7 @@ public class NormalWay : BaseState
 
     public override void leaveState(StateManager state)
     {
-
+        Manager.Instance.Dragon.SetActive(false);
     }
 
     public override void OptionClicked(int index, string option)
@@ -50,6 +54,6 @@ public class NormalWay : BaseState
 
     public override void UpdateState(StateManager state)
     {
-
+        Dragon.transform.position += Vector3.right * Time.deltaTime * 4.0f;
     }
 }

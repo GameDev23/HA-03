@@ -15,6 +15,7 @@ public class shadyWayToUni : BaseState
     private bool wantFight = false;
     private bool bottlesOffered = false;
     private bool offeredThemCash = false;
+    private GameObject Thug;
 
     private string goToExam = "Proceed";
     private string goToHell = "Proceed..";
@@ -34,6 +35,9 @@ public class shadyWayToUni : BaseState
 
     public override void EnterState(StateManager state)
     {
+        Thug = Manager.Instance.AlleyThug; // reference to the the robber
+        Manager.Instance.AlleyThug.SetActive(true);
+
         //Simplificiation in writing
         stateManager = state;
         textMesh = Manager.Instance.textMesh;
@@ -162,7 +166,7 @@ public class shadyWayToUni : BaseState
             {
                 options.Add(goToExam);
                 state.ShowDialogOptions(this, options);
-                textMesh.text = "The robbers happen to have a <color=yellow>Pfandflaschengerät</color> \n offered all your bottles for your life! \n You are free to go to the exam ";
+                textMesh.text = "The robbers happen to have a <color=yellow>Pfandflaschengerät</color> \n and take all your bottles for your life! \n You are free to go to the exam ";
             }
 
             else if (offeredThemCash)
@@ -181,6 +185,7 @@ public class shadyWayToUni : BaseState
     {
         AudioManager.Instance.sourceGlobal.volume = 1.0f; //muting the global
         AudioManager.Instance.sourceSamwel.volume = 0; //enabled my speaker 
+        Thug.SetActive(false);
     }
 
     public override void OptionClicked(int index, string option)

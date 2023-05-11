@@ -15,10 +15,13 @@ public class Manager : MonoBehaviour
     public Sprite bedroom;
     public Sprite bridge;
     public GameObject key;
+    public GameObject knife;
     public GameObject layoutObj;
     public GameObject buttonPrefab;
     public GameObject cameraFlash;
     public GameObject PanelSanity;
+    public GameObject Dragon;
+    public GameObject AlleyThug;
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;
@@ -54,14 +57,14 @@ public class Manager : MonoBehaviour
         
     }
 
-    public void collectKey()
+    public void CollectItem(GameObject gameObject)
     {
-        StartCoroutine(Key());
+        StartCoroutine(Collect(gameObject));
     }
 
-    IEnumerator Key()
+    IEnumerator Collect(GameObject gameObject)
     {
-        Image img = key.GetComponent<Image>();
+        Image img = gameObject.GetComponent<Image>();
         AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.collectItem, 1f);
         // loop over 1 second backwards
         for (float i = 1; i >= 0; i -= Time.deltaTime)
@@ -71,7 +74,7 @@ public class Manager : MonoBehaviour
             yield return null;
         }
 
-        key.SetActive(false);
+        gameObject.SetActive(false);
 
     }
     
