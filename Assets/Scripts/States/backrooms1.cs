@@ -18,6 +18,7 @@ public class backrooms1 : BaseState
 
 
     private string option1Start = ("Run Back");
+    private string option1Start1Text = ("It Seems to be locked, I must find another way");
     private string option2Start = ("Head Towards the Suspicious Looking Elevator ");
     private string option2Start1 = ("Enter the Elevator");  
     private string option3Start = ("Start Mp3 player"); 
@@ -25,7 +26,7 @@ public class backrooms1 : BaseState
     private string option4StartHeadText1 = ("In the back of the Room you see something weird, What could it be ?");
     private string option4Start1 = ("Thats a Funky looking door");
     private string option4StartHeadText2 = ("It smells like Bing chilling in here but why ");
-    private string option4Start2 = ("Look around to see if there is Ice cream ?");
+    private string option4Start2 = ("Enter to see if there is a Ice Cream Shop inside ?");
 
 
 
@@ -37,6 +38,7 @@ public class backrooms1 : BaseState
         SanityNumber.text = state._sanity.ToString();
         options = new List<string>();
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
+        textMesh.text = option4StartHeadText1;
 
 
         AudioManager.Instance.sourceGlobal.volume = 0.0f;
@@ -74,14 +76,15 @@ public class backrooms1 : BaseState
     
     public override void OptionClicked(int index, string option)
     {
-        if (option.Equals(option1Start))//look around option 1
+        if (option.Equals(option1Start))//Run back
         {
             Debug.Log("testSus");
+            textMesh.text = option1Start1Text;
 
             return;
 
 
-        }else if (option.Equals(option2Start))
+        }else if (option.Equals(option2Start)) //Head Towards the Suspicious Looking Elevator
         {
             Debug.Log("testSus2");
             options.Insert(2,option2Start1);
@@ -90,8 +93,15 @@ public class backrooms1 : BaseState
 
             return;
 
+        }else if (option.Equals(option2Start1)) //Enter the Elevator
+        {
+            stateManager.SwitchState(stateManager.backroomsElevator);  
 
-        }else if (option.Equals(option3Start))
+
+
+            return;
+        
+        }else if (option.Equals(option3Start)) //Start Mp3 player
         {
             Debug.Log("testSus3");
             Manager.Instance.mp3Player.SetActive(true);
@@ -99,12 +109,36 @@ public class backrooms1 : BaseState
 
             return;
 
-        }else if (option.Equals(option4Start))
+        }else if (option.Equals(option4Start)) //Slowly walk towards the unknown"
         {
             Debug.Log("testsus4");
+            textMesh.text = option4StartHeadText2;
+            options.Insert(4,option4Start1);
+            options.Remove(option4Start);
+            stateManager.ShowDialogOptions(this, options);
 
             return;
 
+        }else if(option.Equals(option4Start1)){
+            options.Insert(4,option4Start2);
+            options.Remove(option4Start1);
+            stateManager.ShowDialogOptions(this, options);
+
+
+
+            
+
+
+
+
+            return;
+        }else if (option.Equals(option4Start2)){
+
+            stateManager.SwitchState(stateManager.shop);
+
+
+
+            return;
         }
 
     }
