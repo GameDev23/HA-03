@@ -36,9 +36,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip endingPassed;
     public AudioClip Click;
     public AudioClip DragonRoar;
+    public AudioClip StabStab;
+    public AudioClip Scream;
     public AudioMixer Mixer;
-
-
     public AudioClip tenseRob;
     public AudioClip diceRoll;
     public AudioClip thunder;

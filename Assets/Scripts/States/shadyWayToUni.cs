@@ -112,6 +112,9 @@ public class shadyWayToUni : BaseState
                 {
                     options.Add(goToExam);
                     state.ShowDialogOptions(this, options);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
+                    stateManager.committedMurder = true;    
                     textMesh.text = "You fend off the robbers with your knife and by the help of you magical Balenciaga®\n They shouldn't have messed with you ";
                 }
 

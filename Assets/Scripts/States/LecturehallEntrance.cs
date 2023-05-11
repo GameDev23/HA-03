@@ -19,7 +19,6 @@ public class LecturehallEntrance : BaseState
     private string optionTakeASeat = "Take a seat";
     private string optionGoToToilet = "Go to the toilet to relief yourself once more";
     
-    
     private string optionTalk1 = "...";
     private string optionTalk2 = "confirm it";
     private string optionTalk3 = "Accept the offer and take a seat afterwards";
@@ -38,16 +37,24 @@ public class LecturehallEntrance : BaseState
         AudioManager.Instance.sourceGlobal.volume = AudioManager.Instance._Volume / 100;
         AudioManager.Instance.sourceGlobal.Play();
 
-        if (isArriving)
+        if (isArriving && !stateManager.committedMurder)
         {
             textMesh.text = "Finally arrived. Now take a seat and ace this exam";
             options.Add(optionTakeASeat);
             options.Add(optionGoToToilet);
 
         }
+
+        else if (isArriving && stateManager.committedMurder)
+        {
+            textMesh.text = "Now after commiting those atrocities,\n you take a seat to ace the exam";
+            options.Add(optionTakeASeat);
+            options.Add(optionGoToToilet);
+        }
+
         else if (isDialog)
         {
-            if(dialogStep == 0)
+            if (dialogStep == 0)
             {
                 textMesh.text = "Suddenly the professor approaches you";
                 options.Add(optionTalk1);

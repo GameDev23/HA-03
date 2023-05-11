@@ -62,6 +62,7 @@ public class StateManager : MonoBehaviour
     public bool hasKey = false;
     public bool wardrobeIsLocked = true;
     public bool hasKnife = false;
+    public bool committedMurder = false;
     public int pencilCount = 0;
     public bool knowsAboutPfandflaschengeraet;
     public bool hasCollectedPfandflaschengeraet;
