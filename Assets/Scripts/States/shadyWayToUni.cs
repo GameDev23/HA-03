@@ -67,7 +67,7 @@ public class shadyWayToUni : BaseState
                 options.Add(samwellTarly);
                 state.ShowDialogOptions(this, options);
                 AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Gabagoey, 2.0f);
-                textMesh.text = " \"Nice outfit lad, shame if something were to happen to them\" ";
+                textMesh.text = " \"Nice outfit lad, shame if something were to happen to them...\" ";
             }
 
             // Wearing normal clothes
@@ -87,7 +87,7 @@ public class shadyWayToUni : BaseState
                 options.Add(samwellTarly);
                 state.ShowDialogOptions(this, options);
                 AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Gabagoey, 2.0f);
-                textMesh.text = " \"In my years of robbing, this is a first! A naked poor scoundrel\" ";
+                textMesh.text = " \"In my years of robbing, this is a first! A naked poor scoundrel...\" ";
             }
 
         }
@@ -114,7 +114,7 @@ public class shadyWayToUni : BaseState
                     state.ShowDialogOptions(this, options);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
-                    textMesh.text = " The gods favor you since you embrace your natural form and not cover yourself in abominations \n The robbers are struck by lightning and die \n You can proceed to the exam...";
+                    textMesh.text = " The gods favor you since you embrace your natural form and not cover yourself in abominations. \n The robbers are struck by lightning and die! \n You can proceed to the exam...";
                 }
 
                 // Not enough god power
@@ -122,7 +122,7 @@ public class shadyWayToUni : BaseState
                 {
                     options.Add(goToHell);
                     state.ShowDialogOptions(this, options);
-                    textMesh.text = "The gods abandon you and you perish...It is said, they favor people who embace their natural form";
+                    textMesh.text = "The gods abandon you and you perish...It is said, they favor people who embace their natural form...";
                 }
 
                 // the góds have heard you
@@ -144,7 +144,7 @@ public class shadyWayToUni : BaseState
                     options.Add(goToHell);
                     state.ShowDialogOptions(this, options);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
-                    textMesh.text = "Oh no!... you forgot your knife back at home \n the robbers rob the hell out of you and beat you to death \n Game over!";
+                    textMesh.text = "Oh no!... you forgot your knife back at home. \n the robbers rob the hell out of you and beat you to death \n Game over!";
                 }
 
                 // Has knife
@@ -157,7 +157,7 @@ public class shadyWayToUni : BaseState
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
                         stateManager.committedMurder = true;
-                        textMesh.text = "You fend off the robbers with your knife and by the help of you magical Balenciaga®\n They shouldn't have messed with you ";
+                        textMesh.text = "You fend off the robbers with your knife and by the help of you magical Balenciaga®. \n They shouldn't have messed with you! ";
                     }
 
                     else if (stateManager.isWearingClothes)
@@ -167,7 +167,7 @@ public class shadyWayToUni : BaseState
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
                         stateManager.committedMurder = true;
-                        textMesh.text = "You fend off the robbers with your knife \n They shouldn't have messed with you ";
+                        textMesh.text = "You fend off the robbers with your knife. \n They shouldn't have messed with you! ";
                     }
 
                     else if (!stateManager.isWearingClothes && !stateManager.isWearingBalenciaga) 
@@ -179,7 +179,7 @@ public class shadyWayToUni : BaseState
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
                         AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
                         stateManager.committedMurder = true;
-                        textMesh.text = "You fend off the robbers with your knife and the gods assist you with a thunder strike since you embrace your natural form \n They shouldn't have messed with you";
+                        textMesh.text = "You fend off the robbers with your knife and the gods assist you with a thunder strike since you embrace your natural form. \n They shouldn't have messed with you!";
                     }
 
                 }
@@ -190,7 +190,7 @@ public class shadyWayToUni : BaseState
             else if (wantBribe)
             {
                 // You habe enough money and bottles
-                if (stateManager.cash >= 20.0f && stateManager.pfandFlaschenCount >= 20)
+                if (stateManager.cash >= 5.0f && stateManager.pfandFlaschenCount >= 20)
                 {
                     options.Add(offerBottles);
                     options.Add(offerCash);
@@ -199,7 +199,7 @@ public class shadyWayToUni : BaseState
                 }
 
                 //  Only enough money
-                else if (stateManager.cash >= 20.0f)
+                else if (stateManager.cash >= 5.0f)
                 {
                     options.Add(offerCash);
                     state.ShowDialogOptions(this, options);
@@ -219,9 +219,12 @@ public class shadyWayToUni : BaseState
                 else
                 {
                     options.Add(goToHell);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
                     state.ShowDialogOptions(this, options);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
-                    textMesh.text = "The robbers take insult in your offering of such little money \n They rob, bit you and leave you for dead";
+                    textMesh.text = "You don't have enough money to bribe! \n The robbers bit you and leave you for dead. \n However, the gods like that you embrace your natural form. \n They strike the robbers down with thunder so they die too...bittersweet";
                 }
 
             }
@@ -242,7 +245,7 @@ public class shadyWayToUni : BaseState
             {
                 options.Add(goToExam);
                 state.ShowDialogOptions(this, options);
-                textMesh.text = "You bribe the robbers off with the cash you collected from the bottles\n Thank god for the Pfandgesetzgebung";
+                textMesh.text = "You bribe the robbers off with the cash you collected from the bottles. \n Thank god for the Pfandgesetzgebung!";
             }
 
         }
