@@ -22,7 +22,10 @@ public class shadyWayToUni : BaseState
 
     // Risk it or go back
     private string samwellTarly = "I'm not risking it. Going back";
-    private string serBarristanSelmy = "With my Balenciaga®  on, I am unstoppable!! Time for a Quick duel before exams";
+    private string serBarristanSelmy = " \"With my Balenciaga®  on, I am unstoppable!! Time for a Quick duel before exams...\" ";
+    private string serNormal = " \"I may be dressed like a peasant, but I have a knight's heart...\" ";
+    private string athena = " \"The Berserker's fought naked, and today you will know why...\" ";
+
 
     // options in robbery
     private string bribe = "pay them off";
@@ -57,10 +60,36 @@ public class shadyWayToUni : BaseState
 
         if (currentScene == 0)
         {
-            options.Add(serBarristanSelmy);
-            options.Add(samwellTarly);
-            state.ShowDialogOptions(this, options);
-            textMesh.text = "You notice a shady figure in the far distance.....";
+            // Wearing Balenciaga®
+            if (stateManager.isWearingBalenciaga)
+            {
+                options.Add(serBarristanSelmy);
+                options.Add(samwellTarly);
+                state.ShowDialogOptions(this, options);
+                AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Gabagoey, 2.0f);
+                textMesh.text = " \"Nice outfit lad, shame if something were to happen to them\" ";
+            }
+
+            // Wearing normal clothes
+            else if (stateManager.isWearingClothes)
+            {
+                options.Add(serNormal);
+                options.Add(samwellTarly);
+                state.ShowDialogOptions(this, options);
+                AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Gabagoey, 2.0f);
+                textMesh.text = " \"Hand over your peasant rags and everything you have lad!\" ";
+            }
+
+            // Naked
+            else 
+            {
+                options.Add(athena);
+                options.Add(samwellTarly);
+                state.ShowDialogOptions(this, options);
+                AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Gabagoey, 2.0f);
+                textMesh.text = " \"In my years of robbing, this is a first! A naked poor scoundrel\" ";
+            }
+
         }
 
         else if(currentScene == 1) 
@@ -93,7 +122,7 @@ public class shadyWayToUni : BaseState
                     options.Add(goToExam);
                     state.ShowDialogOptions(this, options);
                     AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
-                    textMesh.text = "The gods of the Ruhr have heard you!  \n The robbers are struc by lightning and die \n You can proceed to the exam...";
+                    textMesh.text = "The gods of the Ruhr have heard you!  \n The robbers are struck by lightning and die \n You can proceed to the exam...";
                 }
             }
 

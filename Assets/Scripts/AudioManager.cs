@@ -38,6 +38,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip DragonRoar;
     public AudioClip StabStab;
     public AudioClip Scream;
+    public AudioClip Gabagoey;
     public AudioMixer Mixer;
     public AudioClip tenseRob;
     public AudioClip diceRoll;
