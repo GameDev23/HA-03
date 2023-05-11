@@ -44,7 +44,7 @@ public class LecturehallEntrance : BaseState
             if (!stateManager.isWearingBalenciaga && !stateManager.isWearingClothes)
             {
                 AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.HallLaughing, 12.0f);
-                textMesh.text = "Finally arrived naked infront of a crowd. \n   They laugh at you but you are here on a mission and can't afford to write the Nachreib., \n  Now take a seat and ace this exam";
+                textMesh.text = "Finally arrived naked infront of a crowd. \n   They laugh at you but you are here on a mission and can't afford to write the Nachreib. \n  Now take a seat and ace this exam";
                 options.Add(optionTakeASeat);
                 options.Add(optionGoToToilet);
             }
