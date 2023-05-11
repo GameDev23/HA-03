@@ -29,11 +29,30 @@ public class Kitchen : BaseState
         options = new List<string>();
         if (stateManager.hasEaten)
         {
-            if(!stateManager.hasKey)
+            if (!stateManager.hasKey && !stateManager.hasKnife)
+            {
                 Manager.Instance.key.SetActive(true);
-            else
+                Manager.Instance.knife.SetActive(true);
+            }
+
+            else if (!stateManager.hasKey && stateManager.hasKnife)
+            {
+                Manager.Instance.key.SetActive(true);
+                Manager.Instance.knife.SetActive(false);
+            }
+
+            else if (stateManager.hasKey && !stateManager.hasKnife)
+            {
+                Manager.Instance.knife.SetActive(true);
                 Manager.Instance.key.SetActive(false);
-            
+            }
+
+            else if (stateManager.hasKey && stateManager.hasKnife)
+            {
+                Manager.Instance.knife.SetActive(false);
+                Manager.Instance.key.SetActive(false);
+            }
+
             Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[4];
         }
         else
@@ -132,5 +151,6 @@ public class Kitchen : BaseState
     public override void leaveState(StateManager state)
     {
         Manager.Instance.key.SetActive(false);
+        Manager.Instance.knife.SetActive(false);
     }
 }

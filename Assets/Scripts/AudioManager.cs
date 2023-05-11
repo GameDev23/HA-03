@@ -39,6 +39,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip StabStab;
     public AudioClip Scream;
     public AudioClip Gabagoey;
+    public AudioClip Holiness;
+    public AudioClip HallLaughing;
+    public AudioClip HallGasping;
     public AudioMixer Mixer;
     public AudioClip tenseRob;
     public AudioClip diceRoll;

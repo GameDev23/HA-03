@@ -108,12 +108,21 @@ public class shadyWayToUni : BaseState
             // Praying for your survival
             if (wantPray)
             {
+                if (!stateManager.isWearingClothes && !stateManager.isWearingBalenciaga)
+                {
+                    options.Add(goToExam);
+                    state.ShowDialogOptions(this, options);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
+                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
+                    textMesh.text = " The gods favor you since you embrace your natural form and not cover yourself in abominations \n The robbers are struck by lightning and die \n You can proceed to the exam...";
+                }
+
                 // Not enough god power
-                if (survivalChance == 1)
+                else if (survivalChance == 1)
                 {
                     options.Add(goToHell);
                     state.ShowDialogOptions(this, options);
-                    textMesh.text = "The gods abandon you and you perish...maybe you should sacrifice more often";
+                    textMesh.text = "The gods abandon you and you perish...It is said, they favor people who embace their natural form";
                 }
 
                 // the góds have heard you
@@ -129,6 +138,7 @@ public class shadyWayToUni : BaseState
             // Fighting for your survival
             else if (wantFight)
             {
+                // Has no knife
                 if (!stateManager.hasKnife)
                 {
                     options.Add(goToHell);
@@ -137,14 +147,41 @@ public class shadyWayToUni : BaseState
                     textMesh.text = "Oh no!... you forgot your knife back at home \n the robbers rob the hell out of you and beat you to death \n Game over!";
                 }
 
+                // Has knife
                 else
                 {
-                    options.Add(goToExam);
-                    state.ShowDialogOptions(this, options);
-                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
-                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
-                    stateManager.committedMurder = true;    
-                    textMesh.text = "You fend off the robbers with your knife and by the help of you magical Balenciaga®\n They shouldn't have messed with you ";
+                    if (stateManager.isWearingBalenciaga)
+                    {
+                        options.Add(goToExam);
+                        state.ShowDialogOptions(this, options);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
+                        stateManager.committedMurder = true;
+                        textMesh.text = "You fend off the robbers with your knife and by the help of you magical Balenciaga®\n They shouldn't have messed with you ";
+                    }
+
+                    else if (stateManager.isWearingClothes)
+                    {
+                        options.Add(goToExam);
+                        state.ShowDialogOptions(this, options);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
+                        stateManager.committedMurder = true;
+                        textMesh.text = "You fend off the robbers with your knife \n They shouldn't have messed with you ";
+                    }
+
+                    else if (!stateManager.isWearingClothes && !stateManager.isWearingBalenciaga) 
+                    {
+                        options.Add(goToExam);
+                        state.ShowDialogOptions(this, options);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.StabStab, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Scream, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
+                        stateManager.committedMurder = true;
+                        textMesh.text = "You fend off the robbers with your knife and the gods assist you with a thunder strike since you embrace your natural form \n They shouldn't have messed with you";
+                    }
+
                 }
 
             }
@@ -225,14 +262,26 @@ public class shadyWayToUni : BaseState
         // Scene 1 options
         if (option.Equals(samwellTarly)) 
         {
-            Debug.Log("Option 1");
             stateManager.SwitchState(stateManager.leavingHouse);
             return;
         }
 
         if (option.Equals(serBarristanSelmy)) 
         {
-            Debug.Log("Option 2");
+            currentScene += 1;
+            stateManager.SwitchState(stateManager.shadyWay);
+            return;
+        }
+
+        if (option.Equals(serNormal))
+        {
+            currentScene += 1;
+            stateManager.SwitchState(stateManager.shadyWay);
+            return;
+        }
+
+        if (option.Equals(athena))
+        {
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
             return;
@@ -241,7 +290,6 @@ public class shadyWayToUni : BaseState
         //Scene 2 options
         if (option.Equals(pray)) 
         {
-            Debug.Log("Option 3");
             wantPray = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
@@ -250,7 +298,6 @@ public class shadyWayToUni : BaseState
 
         if (option.Equals(fight))
         {
-            Debug.Log("Option 4");
             wantFight = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);
@@ -259,7 +306,6 @@ public class shadyWayToUni : BaseState
 
         if (option.Equals(bribe))
         {
-            Debug.Log("Option 5");
             wantBribe = true;
             currentScene += 1;
             stateManager.SwitchState(stateManager.shadyWay);

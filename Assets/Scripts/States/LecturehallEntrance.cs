@@ -37,19 +37,49 @@ public class LecturehallEntrance : BaseState
         AudioManager.Instance.sourceGlobal.volume = AudioManager.Instance._Volume / 100;
         AudioManager.Instance.sourceGlobal.Play();
 
+        // Didn't stab robbers
         if (isArriving && !stateManager.committedMurder)
         {
-            textMesh.text = "Finally arrived. Now take a seat and ace this exam";
-            options.Add(optionTakeASeat);
-            options.Add(optionGoToToilet);
+            // You arrive in the hall naked
+            if (!stateManager.isWearingBalenciaga && !stateManager.isWearingClothes)
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.HallLaughing, 12.0f);
+                textMesh.text = "Finally arrived naked infront of a crowd. \n   They laugh at you but you are here on a mission, \n  Now take a seat and ace this exam";
+                options.Add(optionTakeASeat);
+                options.Add(optionGoToToilet);
+            }
 
+            // You arrive in the hall clothed
+            else 
+            {
+                textMesh.text = "Finally arrived. Now take a seat and ace this exam";
+                options.Add(optionTakeASeat);
+                options.Add(optionGoToToilet);
+            }
         }
 
+        // Stabbed robbers
         else if (isArriving && stateManager.committedMurder)
         {
-            textMesh.text = "Now after commiting those atrocities,\n you take a seat to ace the exam";
-            options.Add(optionTakeASeat);
-            options.Add(optionGoToToilet);
+            // You arrive in the hall naked
+            if (!stateManager.isWearingBalenciaga && !stateManager.isWearingClothes)
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.HallLaughing, 12.0f);
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.HallGasping, 12.0f);
+                textMesh.text = "Finally arrived naked infront of a crowd after commiting those atrocities. \n   They laugh at you and some gasp at the blood! \n You are here on a mission and can't afford to write the Nachreib. \n Now take a seat and ace this exam";
+                options.Add(optionTakeASeat);
+                options.Add(optionGoToToilet);
+
+            }
+
+            // You arrive in the hall clothed
+            else
+            {
+                AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.HallGasping, 12.0f);
+                textMesh.text = "Now after commiting those atrocities,  You are bloodied and people are in awe! \n You are here on a mission and can't afford to write the Nachreib, \n Now take a seat and ace this exam";
+                options.Add(optionTakeASeat);
+                options.Add(optionGoToToilet);
+            }
         }
 
         else if (isDialog)
