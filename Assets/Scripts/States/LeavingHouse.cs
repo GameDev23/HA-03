@@ -11,7 +11,7 @@ public class LeavingHouse : BaseState
 
     #region Options
     private string option_normal_way = "Take usual way to Uni";
-    private string option_shady_fast_way = "Take the fast but shady way to Uni";
+    private string option_shady_fast_way = "Take the fast (and shady) way to Uni";
     private string option_head_back_in = "Head back to the livingroom";
     #endregion
 
