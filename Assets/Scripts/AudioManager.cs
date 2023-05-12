@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Holiness;
     public AudioClip HallLaughing;
     public AudioClip HallGasping;
+    public AudioClip collapse;
     public AudioMixer Mixer;
     public AudioClip tenseRob;
     public AudioClip diceRoll;
