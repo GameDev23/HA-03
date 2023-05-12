@@ -2723,14 +2723,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '(Good ending) Desk > Take 20 pens > leave > Kitchen > eat > key > back
-    > wardrobe > balenciaga > leave > kitchen > livingroom > uni > normal way > take
-    a seat > d) c) d) a) a) b) b) c) a) c) a) d)
+    > wardrobe > balenciaga > leave > kitchen > livingroom > uni > normal way > Go
+    arround > take a seat > d) c) d) a) a) b) b) c) a) c) a) d)
 
-    (Bad ending) same as good one
-    but dont take enough pens or dont tick correct answers
+    (Bad ending)
+    same as good one but dont take enough pens or dont tick correct answers
 
-    (Secret ending) go
-    to lecture hall but decide to go to the toilet'
+    (Secret
+    ending) go to lecture hall but decide to go to the toilet'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
