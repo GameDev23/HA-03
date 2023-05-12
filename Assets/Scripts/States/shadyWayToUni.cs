@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -103,7 +104,7 @@ public class shadyWayToUni : BaseState
 
         else if (currentScene == 2)
         {
-            int survivalChance = Random.Range(1, 3);
+            int survivalChance = UnityEngine.Random.Range(1, 3);
 
             // Praying for your survival
             if (wantPray)
@@ -126,7 +127,7 @@ public class shadyWayToUni : BaseState
                 }
 
                 // the góds have heard you
-                else
+                else if (survivalChance == 2)
                 {
                     options.Add(goToExam);
                     state.ShowDialogOptions(this, options);
@@ -141,10 +142,25 @@ public class shadyWayToUni : BaseState
                 // Has no knife
                 if (!stateManager.hasKnife)
                 {
-                    options.Add(goToHell);
-                    state.ShowDialogOptions(this, options);
-                    AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
-                    textMesh.text = "Oh no!... you forgot your knife back at home. \n the robbers rob the hell out of you and beat you to death \n Game over!";
+                    // And naked
+                    if (!stateManager.isWearingClothes && !stateManager.isWearingBalenciaga)
+                    {
+                        options.Add(goToHell);
+                        state.ShowDialogOptions(this, options);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.Holiness, 4.0f);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.thunder, 4.0f);
+                        textMesh.text = "Oh no!... you forgot your knife back at home. \n the robbers rob the hell out of you and beat you to death \n However, the gods like that you embrace your natural form. \n They strike the robbers down with thunder so they die too...\n Game over!";
+
+                    }
+                    // Clothed
+                    else 
+                    {
+                        options.Add(goToHell);
+                        state.ShowDialogOptions(this, options);
+                        AudioManager.Instance.sourceSamwel.PlayOneShot(AudioManager.Instance.beaten, 4.0f);
+                        textMesh.text = "Oh no!... you forgot your knife back at home. \n the robbers rob the hell out of you and beat you to death \n Game over!";
+                    }
                 }
 
                 // Has knife
