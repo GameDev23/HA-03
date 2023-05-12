@@ -27,6 +27,10 @@ public class backrooms1 : BaseState
     private string option4Start1 = ("Thats a Funky looking door");
     private string option4StartHeadText2 = ("It smells like Bing chilling in here but why ");
     private string option4Start2 = ("Enter to see if there is a Ice Cream Shop inside ?");
+    private string option5start = ("Head left trough the Amogus Door ");
+    private string option5StartHeadText1 = ("The Door seems to be looked by something that has the form of an Amogus, maybe you can get it somewhere ?");
+    private string option5start1 = ("Open Door");
+    private string AmogusDoor = ("Ye need tae find th' Amogus, laddie, or ye'll meet yer demise,In th' depths o' th' Backrooms, where fear fills th' skies.If ye fail tae uncover this elusive mate,Ye'll ne'er escape, doomed tae a dreadful fate.");
 
 
 
@@ -55,6 +59,7 @@ public class backrooms1 : BaseState
         options.Add(option2Start);
         options.Add(option3Start);
         options.Add(option4Start);
+        options.Add(option5start);
 
         stateManager.ShowDialogOptions(this, options);
 
@@ -64,6 +69,7 @@ public class backrooms1 : BaseState
 
     public override void UpdateState(StateManager state)
     {
+
         if (stateManager.isWearingBalenciaga && !Flash.Instance.flashing && !Flash.Instance.isInvoked)
         {
             float delay = Random.Range(0.02f, 1f);
@@ -126,20 +132,41 @@ public class backrooms1 : BaseState
 
 
 
-            
-
-
-
-
             return;
         }else if (option.Equals(option4Start2)){
 
             stateManager.SwitchState(stateManager.shop);
 
+            return;
+        }else if (option.Equals(option5start)) // head left trough amogus door
+        {
+            textMesh.text = option5StartHeadText1;
+            options.Insert(5, option5start1);
+            options.Remove(option5start);
+
+            stateManager.ShowDialogOptions(this, options);
+
+            return;
+
+        }else if (option.Equals(option5start1)) // open door
+        {
+            if (!stateManager.AmogusKey)
+            {
+                textMesh.text = AmogusDoor;
+
+
+                return;
+            }
+
+            stateManager.SwitchState(stateManager.backroomsElevator);
+
+
 
 
             return;
         }
+
+
 
     }
 

@@ -10,6 +10,8 @@ public class backroomsElevator : BaseState
 
     private TextMeshProUGUI SanityNumber;
 
+    private float TimeElapsed = 0f;
+
 
 
     private string Introduction = ("You have Entered a slim shady looking Elevator what to do now ?");
@@ -30,6 +32,7 @@ public class backroomsElevator : BaseState
         SanityNumber.text = state._sanity.ToString();
         options = new List<string>();
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
+        TimeElapsed = 0f;
 
 
         AudioManager.Instance.sourceGlobal.volume = 0.0f;
@@ -95,6 +98,14 @@ public class backroomsElevator : BaseState
         if(stateManager._sanity <=0 )
             stateManager._sanity = 0;
 
+
+        TimeElapsed += 1 * Time.deltaTime;
+        stateManager._sanity = (int)(100f - (100f / 75f * TimeElapsed));
+        if(TimeElapsed >= 75f)
+        {
+            stateManager.SwitchState(stateManager.endingDead);
+            Manager.Instance.PanelSanity.SetActive(false);
+        }
     }  
 
 }

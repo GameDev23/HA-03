@@ -48,6 +48,7 @@ public class StateManager : MonoBehaviour
     public BaseState backroomsElevator = new backroomsElevator();
     public BaseState infiniteRoom = new BackroomsInfiniteRoom();
     public BaseState shop = new backroomsShop();
+    public BaseState secretEnding = new SecretEndingBackrooms();
     
     
     /// end of (1)
@@ -69,6 +70,7 @@ public class StateManager : MonoBehaviour
     public int pfandFlaschenCount = 0;
     public float cash = 0f;
     public int _sanity = 100;
+    public bool AmogusKey = false;
 
     /// 
 
@@ -94,6 +96,8 @@ public class StateManager : MonoBehaviour
         temp.Add("");
         ShowDialogOptions(currentState, temp );
         currentState.EnterState(Instance);
+
+        AmogusKey = false;
 
     }
 
