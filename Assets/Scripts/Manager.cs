@@ -22,6 +22,7 @@ public class Manager : MonoBehaviour
     public GameObject PanelSanity;
     public GameObject Dragon;
     public GameObject AlleyThug;
+    public Image SanityBar;
     public List<Sprite> backgroundSprites = new List<Sprite>();
     public List<Sprite> backgroundSpritesDavid = new List<Sprite>();
     public GameObject Panel;

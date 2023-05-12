@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip thunder;
     public AudioClip beaten;
     public AudioClip backroomsbackgroundmusic;
+    public AudioClip backroomsElevatorMusic;
     
 
     public float _Volume = 1f;

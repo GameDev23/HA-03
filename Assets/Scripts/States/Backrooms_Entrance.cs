@@ -45,7 +45,9 @@ public class Backrooms_Entrance : BaseState
         {
             AudioManager.Instance.sourceBackrooms.Play();
         }
-        AudioManager.Instance.sourceBackrooms.volume = 0.4f;        
+        AudioManager.Instance.sourceBackrooms.volume = 0.4f;   
+
+        Manager.Instance.PanelSanity.SetActive(true);     
 
 
 
@@ -141,6 +143,8 @@ public class Backrooms_Entrance : BaseState
         }else if(option.Equals(openDoor))//open door
         {
             stateManager.SwitchState(stateManager.backrooms_level1);
+
+            return;
         }
 
     }
@@ -151,7 +155,7 @@ public class Backrooms_Entrance : BaseState
     {
         if (stateManager.isWearingBalenciaga && !Flash.Instance.flashing && !Flash.Instance.isInvoked)
         {
-            float delay = Random.Range(0.02f, 1f);
+            float delay = Random.Range(3f, 10f);
             Debug.Log("Flash start with delay of " + delay);
             Flash.Instance.doFlashWithDelay(delay);
             
@@ -162,6 +166,17 @@ public class Backrooms_Entrance : BaseState
         }else 
         {
             AudioManager.Instance.sourceBackrooms.volume = 0.2f;
+        }
+
+
+        Manager.Instance.SanityBar.fillAmount = ((float)stateManager._sanity) / 100;
+
+        if(stateManager._sanity <=0 )
+            stateManager._sanity = 0;
+
+        if(stateManager._sanity <= 0){
+            stateManager.SwitchState(stateManager.endingDead);
+            Manager.Instance.PanelSanity.SetActive(false);
         }
 
     }
