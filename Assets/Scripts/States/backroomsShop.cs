@@ -15,10 +15,9 @@ public class backroomsShop : BaseState
 
     private string Introduction = ("The smell of Bing chilling led you to a Sussy looking ice cream shop, But what is that you can see behind the Counter. Looks like a guy Selling Ice Cream. Should i approach him or not ?");
 
-    private string option1Start = ("Filler");
-    private string option2Start = ("Filler");  
-    private string option3Start = ("Filler "); 
-    private string option4Start = ("Filler");
+    private string option1Start = ("Open Shop");
+    private string option2Start = ("Leave");  
+   
 
 
 
@@ -41,14 +40,13 @@ public class backroomsShop : BaseState
         }
         AudioManager.Instance.sourceBackrooms.volume = 0.4f;   
 
-        Manager.Instance.PanelSanity.SetActive(true);     
-
+        Manager.Instance.PanelSanity.SetActive(true);
+        
 
 
         options.Add(option1Start);
         options.Add(option2Start);
-        options.Add(option3Start);
-        options.Add(option4Start);
+
 
         stateManager.ShowDialogOptions(this, options);
 
@@ -56,16 +54,30 @@ public class backroomsShop : BaseState
         textMesh.text = Introduction;
 
 
-
     }
 
     public override void leaveState(StateManager state)
     {
+        Manager.Instance.ShopPanel.SetActive(false);
+
 
     }
 
     public override void OptionClicked(int index, string option)
     {
+        if (option.Equals(option1Start))
+        {
+            Manager.Instance.ShopPanel.SetActive(true);
+
+            options.Remove(option1Start);
+            stateManager.ShowDialogOptions(this, options);
+
+
+        }else if (option.Equals(option2Start))
+        {
+            stateManager.SwitchState(stateManager.backrooms_level1);
+        }
+      
 
 
 

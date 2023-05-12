@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour
     public List<Sprite> samwelSprites = new List<Sprite>();
     public TextMeshProUGUI volumeTextMesh;
     public GameObject mp3Player;
+    public GameObject ShopPanel;
     
 
     private void Awake()
