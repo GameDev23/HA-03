@@ -1902,6 +1902,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 234b68405f10e7d4fb40cc85b99f2187, type: 3}
   - {fileID: 21300000, guid: e09ce4f90babc0e4588b85d935d83301, type: 3}
   - {fileID: 21300000, guid: 675666f37d7dfa244832b661f0e92db9, type: 3}
+  - {fileID: 21300000, guid: c479ef81db71fe8468ce2ff37c4c256c, type: 3}
   Panel: {fileID: 1672954745}
   PanelTips: {fileID: 434405557}
   PanelWalktrough: {fileID: 623086815}
