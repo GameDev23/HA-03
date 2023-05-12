@@ -108,7 +108,7 @@ public class Kitchen : BaseState
                 Manager.Instance.knife.SetActive(true);
             stateManager.hasEaten = true;
             audioSource.PlayOneShot(AudioManager.Instance.eatApple, 0.5f);
-            textMesh.text = "Yummy, that was healthy compared to the usual stuff you were eating the last days.\nYou even ate the cutlery. There should be nice weather tomorrow.\n\nBy the way, is this the closet <color=yellow>key</color>?";
+            textMesh.text = "Yummy, that was healthy compared to the usual stuff you were eating the last days.\nYou even ate the dishes. There should be nice weather tomorrow.\n\nBy the way, is this the closet <color=yellow>key</color>?";
             Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[4];
             options.Remove(option);
             options.Add(optionTakeKey);
