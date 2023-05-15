@@ -1896,6 +1896,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0293bf702c750ae42b36104889930be8, type: 3}
   - {fileID: 21300000, guid: 7b72cfdb61844a14c9bfe1cbc0d2d11f, type: 3}
   - {fileID: 21300000, guid: c5eb139b0cfe689428f35c71ac248ef6, type: 3}
+  - {fileID: 21300000, guid: fed87f81846081d499c6d18064688fe5, type: 3}
   backgroundSpritesDavid:
   - {fileID: 21300000, guid: 7d0ca2f727cb28c43bc8faeffde0f8c3, type: 3}
   - {fileID: 21300000, guid: 6fcf147a602de2d4ba3855fdb7719c75, type: 3}
