@@ -46,9 +46,8 @@ public class StateManager : MonoBehaviour
 
     public BaseState backrooms_level1 = new backrooms1();
     public BaseState backroomsElevator = new backroomsElevator();
-    public BaseState infiniteRoom = new BackroomsInfiniteRoom();
     public BaseState shop = new backroomsShop();
-    public BaseState secretEnding = new SecretEndingBackrooms();
+    public BaseState secret_Ending = new SecretEnding();
     
     
     /// end of (1)

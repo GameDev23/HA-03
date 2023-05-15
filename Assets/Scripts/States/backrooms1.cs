@@ -153,18 +153,15 @@ public class backrooms1 : BaseState
             if (!stateManager.AmogusKey)
             {
                 textMesh.text = AmogusDoor;
-
-
                 return;
+
             }
 
-            stateManager.SwitchState(stateManager.backroomsElevator);
-
-
-
-
+            stateManager.SwitchState(stateManager.secret_Ending);
             return;
+
         }
+
 
 
 
