@@ -74,6 +74,8 @@ public class StateManager : MonoBehaviour
     public int _sanity = 100;
     public bool AmogusKey = false;
     public int infiniteRoomCount;
+    public bool hasPidgeon = false;
+    public bool hasBingChilling = false;
 
     /// 
 
