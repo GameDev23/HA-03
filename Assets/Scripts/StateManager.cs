@@ -48,6 +48,8 @@ public class StateManager : MonoBehaviour
     public BaseState backroomsElevator = new backroomsElevator();
     public BaseState shop = new backroomsShop();
     public BaseState secret_Ending = new SecretEnding();
+    public BaseState infinite_Room1 = new InfiniteRoom1();
+    public BaseState infinite_Room2 = new InfiniteRoom2();
     
     
     /// end of (1)
@@ -71,6 +73,7 @@ public class StateManager : MonoBehaviour
     public float cash = 0f;
     public int _sanity = 100;
     public bool AmogusKey = false;
+    public int infiniteRoomCount;
 
     /// 
 

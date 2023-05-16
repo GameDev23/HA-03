@@ -14,7 +14,7 @@ public class backrooms1 : BaseState
     private TextMeshProUGUI SanityNumber;
 
 
-
+    private int runBackCounter;
 
 
     private string option1Start = ("Run Back");
@@ -77,6 +77,11 @@ public class backrooms1 : BaseState
             Flash.Instance.doFlashWithDelay(delay);
             
         }
+
+        if(runBackCounter >= 5)
+        {
+            stateManager.SwitchState(stateManager.infinite_Room1);
+        }
         
     }
     
@@ -86,6 +91,7 @@ public class backrooms1 : BaseState
         {
             Debug.Log("testSus");
             textMesh.text = option1Start1Text;
+            runBackCounter += 1;
 
             return;
 
