@@ -33,16 +33,15 @@ public class InfiniteRoom1 : BaseState
         SanityNumber.text = state._sanity.ToString();
         options = new List<string>();
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
-        TimeElapsed = 0f;
+
 
 
         AudioManager.Instance.sourceGlobal.volume = 0.0f;
-        AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.backroomsElevatorMusic;
         if (!AudioManager.Instance.sourceBackrooms.isPlaying)
         {
             AudioManager.Instance.sourceBackrooms.Play();
         }
-        AudioManager.Instance.sourceBackrooms.volume = 0.4f;
+        AudioManager.Instance.sourceBackrooms.volume = 0.8f;
 
         Manager.Instance.PanelSanity.SetActive(true);
 
@@ -57,6 +56,24 @@ public class InfiniteRoom1 : BaseState
 
         Manager.Instance.backgroundImage.sprite = Manager.Instance.backgroundSprites[12];
         textMesh.text = Introduction;
+        if(stateManager.infiniteRoomCount == 0)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.You, 2f);
+
+        }else if(stateManager.infiniteRoomCount == 2)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.never, 2f);
+
+        }else if(stateManager.infiniteRoomCount == 4)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.out_, 2f);
+
+        }else if(stateManager.infiniteRoomCount == 6)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.here, 2f);
+
+        }
+    
 
 
 
@@ -64,6 +81,7 @@ public class InfiniteRoom1 : BaseState
 
     public override void leaveState(StateManager state)
     {
+        stateManager.infiniteRoomCount += 1;
 
     }
 
@@ -72,8 +90,9 @@ public class InfiniteRoom1 : BaseState
         if(option.Equals(option1Start) || option.Equals(option2Start) || option.Equals(option3Start) || option.Equals(option4Start))
         {
             stateManager.SwitchState(stateManager.infinite_Room2);
-        }
 
+        }
+        Debug.Log(stateManager.infiniteRoomCount);
 
 
     }

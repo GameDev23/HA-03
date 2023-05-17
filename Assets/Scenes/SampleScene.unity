@@ -4060,6 +4060,14 @@ MonoBehaviour:
   beaten: {fileID: 8300000, guid: 7e16f4108772169448b95c0f5ccaae97, type: 3}
   backroomsbackgroundmusic: {fileID: 8300000, guid: ea4506b0287139f45aac0480c618df72, type: 3}
   backroomsElevatorMusic: {fileID: 8300000, guid: 997897315228f53449bd54ee84d57c70, type: 3}
+  You: {fileID: 8300000, guid: 9210c3d6faaffe84e8c73028ca901296, type: 3}
+  will: {fileID: 8300000, guid: f4aeb2f7967e5a34887580889f9c3385, type: 3}
+  never: {fileID: 8300000, guid: 7fe0e5c16a75cda4ba22ceb2554f8bd1, type: 3}
+  get: {fileID: 8300000, guid: 8ea5fc8b11ba1c04280fd718556db790, type: 3}
+  out_: {fileID: 8300000, guid: e18bde8ddbcf54d40986390ca7dc7f69, type: 3}
+  of: {fileID: 8300000, guid: 925e76f6bb55e80439bef39a93b1fab9, type: 3}
+  here: {fileID: 8300000, guid: 32a89c707fda1f348ab0e7e100891ba7, type: 3}
+  InfiniteRoomEnding: {fileID: 8300000, guid: fafb99db8049e624ba96bee1f73923bf, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:
@@ -5330,6 +5338,7 @@ MonoBehaviour:
   infiniteRoomCount: 0
   hasPidgeon: 0
   hasBingChilling: 0
+  lockedInfiniteRoom: 0
 --- !u!4 &1692136488
 Transform:
   m_ObjectHideFlags: 0

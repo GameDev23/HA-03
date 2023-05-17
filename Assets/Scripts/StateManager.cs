@@ -73,9 +73,10 @@ public class StateManager : MonoBehaviour
     public float cash = 0f;
     public int _sanity = 100;
     public bool AmogusKey = false;
-    public int infiniteRoomCount;
+    public int infiniteRoomCount = 0;
     public bool hasPidgeon = false;
     public bool hasBingChilling = false;
+    public bool lockedInfiniteRoom = false;
 
     /// 
 
