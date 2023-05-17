@@ -50,7 +50,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip beaten;
     public AudioClip backroomsbackgroundmusic;
     public AudioClip backroomsElevatorMusic;
-    
+    public AudioClip You;
+    public AudioClip will;
+    public AudioClip never;
+    public AudioClip get;
+    public AudioClip out_;
+    public AudioClip of;
+    public AudioClip here;
+    public AudioClip InfiniteRoomEnding;
 
     public float _Volume = 1f;
 

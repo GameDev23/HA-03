@@ -33,16 +33,14 @@ public class InfiniteRoom2 : BaseState
         SanityNumber.text = state._sanity.ToString();
         options = new List<string>();
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
-        TimeElapsed = 0f;
 
 
         AudioManager.Instance.sourceGlobal.volume = 0.0f;
-        AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.backroomsElevatorMusic;
         if (!AudioManager.Instance.sourceBackrooms.isPlaying)
         {
             AudioManager.Instance.sourceBackrooms.Play();
         }
-        AudioManager.Instance.sourceBackrooms.volume = 0.4f;
+        AudioManager.Instance.sourceBackrooms.volume = 0.8f;
 
         Manager.Instance.PanelSanity.SetActive(true);
 
@@ -59,21 +57,40 @@ public class InfiniteRoom2 : BaseState
         textMesh.text = Introduction;
 
 
+        if(stateManager.infiniteRoomCount == 1){
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.will, 2f);
+
+        }else if(stateManager.infiniteRoomCount == 3)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.get, 2f);
+
+        }else if(stateManager.infiniteRoomCount == 5)
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.of, 2f);
+
+        }
+
+
 
     }
 
     public override void leaveState(StateManager state)
     {
+        stateManager.infiniteRoomCount += 1;
+        Debug.Log(stateManager.infiniteRoomCount);
 
     }
 
     public override void OptionClicked(int index, string option)
     {
-        if (option.Equals(option1Start) || option.Equals(option2Start) || option.Equals(option3Start) || option.Equals(option4Start))
+        if ((option.Equals(option1Start) || option.Equals(option2Start) || option.Equals(option3Start) || option.Equals(option4Start)) && stateManager.lockedInfiniteRoom.Equals(false))
         {
             stateManager.SwitchState(stateManager.infinite_Room1);
-        }
+        }else if(stateManager.lockedInfiniteRoom.Equals(true))
+        {
+            AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.InfiniteRoomEnding, 2f);
 
+        }
 
 
     }
