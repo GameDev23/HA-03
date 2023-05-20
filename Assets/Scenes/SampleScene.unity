@@ -4068,6 +4068,7 @@ MonoBehaviour:
   of: {fileID: 8300000, guid: 925e76f6bb55e80439bef39a93b1fab9, type: 3}
   here: {fileID: 8300000, guid: 32a89c707fda1f348ab0e7e100891ba7, type: 3}
   InfiniteRoomEnding: {fileID: 8300000, guid: fafb99db8049e624ba96bee1f73923bf, type: 3}
+  MerchantSpeech: {fileID: 8300000, guid: 756dfe91de533014199a2bcfc3ed7eba, type: 3}
   _Volume: 1
 --- !u!4 &1575410352
 Transform:

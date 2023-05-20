@@ -175,7 +175,7 @@ public class Backrooms_Entrance : BaseState
             stateManager._sanity = 0;
 
         if(stateManager._sanity <= 0){
-            stateManager.SwitchState(stateManager.endingDead);
+            stateManager.SwitchState(stateManager.infinite_Room1);
             Manager.Instance.PanelSanity.SetActive(false);
         }
 
