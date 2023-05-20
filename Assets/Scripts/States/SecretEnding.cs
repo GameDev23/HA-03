@@ -16,8 +16,10 @@ public class SecretEnding : BaseState
 
     private string Introduction = ("Is this heaven or Am i dead");
 
-    private string option1Start = ("sss");
-    private string option2Start = ("sss");  
+    private string option1Start = ("IS");
+    private string option2Start = ("THIS");
+    private string option3Start = ("The");
+    private string option4Start = ("END ? ");    
    
 
 
@@ -47,7 +49,8 @@ public class SecretEnding : BaseState
 
         options.Add(option1Start);
         options.Add(option2Start);
-
+        options.Add(option3Start);
+        options.Add(option4Start);
 
         stateManager.ShowDialogOptions(this, options);
 
