@@ -14,10 +14,12 @@ public class SecretEnding : BaseState
 
 
 
-    private string Introduction = ("Is this heaven or Am i dead");
+    private string Introduction = ("AMOGUS");
 
-    private string option1Start = ("sss");
-    private string option2Start = ("sss");  
+    private string option1Start = ("IS");
+    private string option2Start = ("THIS");
+    private string option3Start = ("The");
+    private string option4Start = ("END ? ");    
    
 
 
@@ -32,9 +34,11 @@ public class SecretEnding : BaseState
         options = new List<string>();
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
 
+        Manager.Instance.Amogus.SetActive(true);
+
 
         AudioManager.Instance.sourceGlobal.volume = 0.0f;
-        AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.backroomsbackgroundmusic;
+        AudioManager.Instance.sourceBackrooms.clip = AudioManager.Instance.SecretEndingAmogus;
         if(!AudioManager.Instance.sourceBackrooms.isPlaying)
         {
             AudioManager.Instance.sourceBackrooms.Play();
@@ -47,7 +51,8 @@ public class SecretEnding : BaseState
 
         options.Add(option1Start);
         options.Add(option2Start);
-
+        options.Add(option3Start);
+        options.Add(option4Start);
 
         stateManager.ShowDialogOptions(this, options);
 
