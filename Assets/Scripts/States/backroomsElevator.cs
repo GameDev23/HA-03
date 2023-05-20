@@ -16,10 +16,11 @@ public class backroomsElevator : BaseState
 
     private string Introduction = ("You have Entered a slim shady looking Elevator what to do now ?");
 
-    private string option1Start = ("Filler");
-    private string option2Start = ("Filler");  //reduce sanity
-    private string option3Start = ("Filler "); //raises Sanity
-    private string option4Start = ("Filler");
+    private string option1Start = ("HELP");
+    private string option2Start = ("HELP");  //reduce sanity
+    private string option3Start = ("HELP "); //raises Sanity
+    private string option4Start = ("HELP");
+    private string creditcardshark = ("Merchant: Hail, goodly traveler! I bear tidings of a marvel! 'Tis a portable card for swift exchanges. No more clinking coins! Merchants far and wide doth accept it. Piqued thy interest?");
 
 
 
@@ -68,9 +69,28 @@ public class backroomsElevator : BaseState
 
     public override void OptionClicked(int index, string option)
     {
+        if(option.Equals(option1Start))
+        {
+            textMesh.text = creditcardshark;
+            stateManager.ShowDialogOptions(this, options);
 
 
+        }else if(option.Equals(option2Start)){
+            textMesh.text = creditcardshark;
+            stateManager.ShowDialogOptions(this, options);
 
+        }else if(option.Equals(option3Start)){
+            textMesh.text = creditcardshark;
+            stateManager.ShowDialogOptions(this, options);
+
+        }else if(option.Equals(option3Start)){
+            textMesh.text = creditcardshark;
+            stateManager.ShowDialogOptions(this, options);
+            
+        }
+            
+
+        return;
     }
 
 

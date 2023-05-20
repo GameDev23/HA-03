@@ -41,6 +41,8 @@ public class backroomsShop : BaseState
         AudioManager.Instance.sourceBackrooms.volume = 0.4f;   
 
         Manager.Instance.PanelSanity.SetActive(true);
+
+        AudioManager.Instance.sourceBackrooms.PlayOneShot(AudioManager.Instance.MerchantSpeech, 1f);
         
 
 

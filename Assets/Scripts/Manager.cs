@@ -33,6 +33,7 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI volumeTextMesh;
     public GameObject mp3Player;
     public GameObject ShopPanel;
+    public GameObject Amogus;
     
 
     private void Awake()
