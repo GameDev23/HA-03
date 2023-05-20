@@ -59,6 +59,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip here;
     public AudioClip InfiniteRoomEnding;
     public AudioClip MerchantSpeech;
+    public AudioClip SecretEndingAmogus;
 
     public float _Volume = 1f;
 
