@@ -21,7 +21,7 @@ public class LecturehallSeat : BaseState
     private string optionStart = "start";
 
     private string question1 = "If a tree falls in the forest and no one is around to hear it, does it make a sound?\na) Yes\nb) No\nc) Only if a squirrel is there to witness it\nd) It depends on the type of tree";
-    private string question2 = "Which of the following is NOT a type of cheese?\na) Cheddar\nb) Gouda\nc) Pikachu\nd) Brie)";
+    private string question2 = "Which of the following is NOT a type of cheese?\na) Cheddar\nb) Gouda\nc) Pikachu\nd) Brie";
     private string question3 = "What is the most important key on a keyboard?\na) The space bar\nb) The delete key\nc) The shift key\nd) The any key";
     private string question4 = "What is the best way to solve a difficult math problem?\na) Crying\nb) Giving up\nc) Asking for help\nd) Taking a nap";
     private string question5 = "A discrete random variable can take on which type of values?\na) Only integer values\nb) Only real values\nc) Both integer and real values\nd) None of the above";

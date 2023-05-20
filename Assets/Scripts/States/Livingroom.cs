@@ -38,7 +38,7 @@ public class Livingroom : BaseState
         {
 
                 stateManager.pfandFlaschenCount++;
-                if(!stateManager.knowsAboutPfandflaschengeraet)
+                if(!stateManager.hasCollectedPfandflaschengeraet)
                 {
                     textMesh.text = "Nice you now have " + stateManager.pfandFlaschenCount
                                                          + " bottle\\s. Remember your trip to germany last year?\nYou bought that weird thing which was called\n" +

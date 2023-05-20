@@ -10,8 +10,8 @@ public class NormalWay : BaseState
     private TextMeshProUGUI textMesh;
     private string goToExam = "proceed";
     private string goBackHome = "return home";
-    private string optionRunFast = "Run as fast as you can to dodge them <color=yellow>Naruto style</color>";
-    private string optionGoArround = "Make a big (real big) sidestep to avoid eye contact";
+    private string optionRunFast = "Run as fast as you can to dodge them <color=yellow>Naruto style</color>  <color=red>(Dangerous)</color>";
+    private string optionGoArround = "Make a big (real big) sidestep to avoid eye contact  <color=green>(Safe)</color>";
     private string optionProceed = "Uff..";
     private GameObject Dragon;
     private int currentScene = 0;
@@ -82,6 +82,7 @@ public class NormalWay : BaseState
             textMesh.text =
                 "You dodged them like you were the hokage himself,\nUnfortunately you stepped on a sturdy <color=grey>BETONBODENPLATTE©</color> which collapsed and transported you into P7";
             AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.collapse, 1f);
+            AudioManager.Instance.sourceGlobal.PlayOneShot(AudioManager.Instance.BodenplattenOST, 5f);
             options = new List<string>();
             options.Add(optionProceed);
             stateManager.ShowDialogOptions(this, options);

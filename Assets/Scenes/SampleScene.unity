@@ -4053,7 +4053,8 @@ MonoBehaviour:
   Holiness: {fileID: 8300000, guid: 482bf5aad1ff28c41ac2a2217304872e, type: 3}
   HallLaughing: {fileID: 8300000, guid: 0d9c924b884c80940894088f1ccdd0da, type: 3}
   HallGasping: {fileID: 8300000, guid: 82bcd1ba496f4284db381e08fef8f1f7, type: 3}
-  collapse: {fileID: 0}
+  collapse: {fileID: 8300000, guid: 291bd0fcc24ade34281434f8406d6f28, type: 3}
+  BodenplattenOST: {fileID: 8300000, guid: 57245a97e5bc6924f9dfbeb2e798e725, type: 3}
   Mixer: {fileID: 24100000, guid: b52f3329fbea72940b11d2963e236f20, type: 2}
   tenseRob: {fileID: 8300000, guid: 28ab4252c9d98da4c9a0b7ca093e4c44, type: 3}
   diceRoll: {fileID: 8300000, guid: 5d8f727846d298b468fb25da1dea207f, type: 3}

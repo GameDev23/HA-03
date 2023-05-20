@@ -17,10 +17,14 @@ public class MainMenu : BaseState
         List<string> options = new List<string>();
         //add some options
         options.Add("Start");
+        
+        //Commented out the debug options
+        /*
         options.Add("Show MP3-Player");
         options.Add("Item 3");
         options.Add("Item 4");
         options.Add("Item 4");
+        */
         //show these options on the panel
         state.ShowDialogOptions(this, options);
         MP3Script.audioSource = AudioManager.Instance.sourceGlobal;
